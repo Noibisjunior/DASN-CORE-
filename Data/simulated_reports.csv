@@ -1,0 +1,399 @@
+Report_ID,Phone_Number,Timestamp,Interface_Type,Raw_Text_Payload,Auto_GPS_Lat,Auto_GPS_Lon,Ground_Truth_Location,True_Threat_Label
+c562ea33,08095637772,2026-05-18,USSD,Market prices for yam are too high today.,,,Unknown,0
+7c2ed356,08036837583,2026-05-07,USSD,Market prices for yam are too high today.,,,Unknown,0
+24695ec7,08027456980,2023-12-07,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Borno. They are armed.,11.8757,13.4349,Borno,1
+3e49f9d7,08068698894,2026-04-30,USSD,Market prices for yam are too high today.,,,Unknown,0
+bb5020fb,08025557868,2012-08-30,WEB_APP,I observed unknown militia stockpiling rice and bread outside Nord-Kivu. They are armed.,-0.5508,28.7185,Nord-Kivu,1
+e3b32e4c,08092807226,2020-05-28,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside North Darfur. They are armed.,15.8601,25.5013,North Darfur,1
+df21d8f5,08010631241,2025-10-17,USSD,Unknown militia moving heavy weapons near Blue Nile. Looks dangerous.,,,Blue Nile,1
+685b4bf9,08022118028,2026-05-18,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+fe08b62f,08073090711,2021-07-02,USSD,Armed group moving heavy weapons near Lower Shabelle. Looks dangerous.,,,Lower Shabelle,1
+f206edcc,08025437042,2023-09-27,USSD,Unknown militia setting up a camp near Karenga. Looks dangerous.,,,Karenga,1
+ef1398e6,08011618645,2026-05-15,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+2007f0dc,08060888664,2003-08-29,USSD,Convoy of motorcycles setting up a camp near Banadir. Looks dangerous.,,,Banadir,1
+a64800f5,08034857178,2024-01-31,WEB_APP,I observed suspicious men moving heavy weapons outside Delta. They are armed.,5.7596,6.3272,Delta,1
+f14bc1a0,08042430967,2026-03-06,USSD,Suspicious men setting up a camp near Ziguinchor. Looks dangerous.,,,Ziguinchor,1
+6f1804b5,08063557387,2021-02-25,USSD,Unknown militia setting up a camp near Kaduna. Looks dangerous.,,,Kaduna,1
+cee41089,08064470620,2018-12-27,USSD,Convoy of motorcycles buying bulk fuel near Middle Juba. Looks dangerous.,,,Middle Juba,1
+15c9a4db,08032345746,2019-01-24,USSD,Suspicious men buying bulk fuel near North Sinai. Looks dangerous.,,,North Sinai,1
+8df00813,08078869897,2020-04-22,USSD,Convoy of motorcycles setting up a camp near Bujumbura Rural. Looks dangerous.,,,Bujumbura Rural,1
+a978885f,08021147867,2020-01-09,USSD,Suspicious men moving heavy weapons near Eastern. Looks dangerous.,,,Eastern,1
+c481af7f,08077195865,2024-09-05,USSD,Unknown militia buying bulk fuel near Bayelsa. Looks dangerous.,,,Bayelsa,1
+78047dbf,08079914168,2026-01-15,USSD,Unknown militia setting up a camp near Muyinga. Looks dangerous.,,,Muyinga,1
+9f7e838f,08023973190,2025-12-04,USSD,Convoy of motorcycles stockpiling rice and bread near Oromia. Looks dangerous.,,,Oromia,1
+6a0a3ca3,08049717802,2021-04-15,USSD,Convoy of motorcycles buying bulk fuel near Kaduna. Looks dangerous.,,,Kaduna,1
+29940d20,08063016471,1999-06-24,USSD,Suspicious men setting up a camp near Northwestern. Looks dangerous.,,,Northwestern,1
+88e4d904,08090103033,2022-09-28,USSD,Suspicious men buying bulk fuel near Cascades. Looks dangerous.,,,Cascades,1
+e80f92d0,08025683688,2026-05-04,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+338ef084,08010489585,2014-12-03,USSD,Armed group moving heavy weapons near Bauchi. Looks dangerous.,,,Bauchi,1
+0f19cf65,08068479948,2012-05-11,USSD,Convoy of motorcycles moving heavy weapons near Kaduna. Looks dangerous.,,,Kaduna,1
+f8a9184d,08063538589,2025-02-26,WEB_APP,I observed armed group stockpiling rice and bread outside Amhara. They are armed.,11.2414,38.3224,Amhara,1
+346a79bf,08083302240,2026-05-20,USSD,Market prices for yam are too high today.,,,Unknown,0
+dc60d96d,08019519112,2024-10-24,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Ituri. They are armed.,2.1295,29.0513,Ituri,1
+25e66243,08088000836,2021-07-09,WEB_APP,I observed unknown militia buying bulk fuel outside Jigawa. They are armed.,11.9786,9.6104,Jigawa,1
+a98eaac3,08067234840,2015-07-16,USSD,Suspicious men buying bulk fuel near Plateau. Looks dangerous.,,,Plateau,1
+d738a657,08020537331,2026-05-06,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+8df27421,08053324984,2020-09-02,USSD,Suspicious men buying bulk fuel near Sousse. Looks dangerous.,,,Sousse,1
+11453fed,08024752304,2025-12-04,USSD,Unknown militia moving heavy weapons near Oromia. Looks dangerous.,,,Oromia,1
+e243f783,08047060515,2019-04-18,USSD,Unknown militia buying bulk fuel near Mopti. Looks dangerous.,,,Mopti,1
+072e3958,08014925897,2016-05-26,USSD,Armed group stockpiling rice and bread near South Kordofan. Looks dangerous.,,,South Kordofan,1
+c09efde8,08038116411,2006-03-23,USSD,Unknown militia stockpiling rice and bread near Bakool. Looks dangerous.,,,Bakool,1
+2ebaadf0,08038547206,2025-10-17,WEB_APP,I observed suspicious men buying bulk fuel outside Blue Nile. They are armed.,11.0079,34.0954,Blue Nile,1
+658049e4,08094559150,2025-11-07,WEB_APP,I observed unknown militia buying bulk fuel outside Central Equatoria. They are armed.,4.8898,31.4589,Central Equatoria,1
+8936e7cf,08077114361,2026-05-16,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+85e8f8fa,08088058469,2016-05-20,USSD,Armed group moving heavy weapons near Middle Shabelle. Looks dangerous.,,,Middle Shabelle,1
+b637f236,08075490988,1997-09-25,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Boumerdes. They are armed.,36.7364,3.6204,Boumerdes,1
+de21b046,08054627749,2018-01-17,WEB_APP,I observed suspicious men buying bulk fuel outside Ziguinchor. They are armed.,12.7527,-16.4003,Ziguinchor,1
+b8fc8515,08037294943,2026-05-02,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+58c40f35,08052713580,2023-02-24,USSD,Armed group moving heavy weapons near Tillaberi. Looks dangerous.,,,Tillaberi,1
+a22a9ec4,08084795339,2026-05-11,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+18d95310,08080682867,2008-04-17,WEB_APP,I observed suspicious men stockpiling rice and bread outside Equatoria. They are armed.,4.68,31.69,Equatoria,1
+b01c71ba,08076668986,2021-02-05,USSD,Suspicious men buying bulk fuel near Kaduna. Looks dangerous.,,,Kaduna,1
+28329513,08049318863,2026-05-19,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+3dd03250,08099515557,2026-05-15,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+317c8b76,08073626908,2025-03-14,USSD,Convoy of motorcycles moving heavy weapons near Ogun. Looks dangerous.,,,Ogun,1
+b6baad31,08064593739,2026-04-23,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+2220344a,08050300914,2014-09-18,USSD,Armed group setting up a camp near Banadir. Looks dangerous.,,,Banadir,1
+e44f803c,08072744452,2026-05-14,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+cfea687d,08085457445,2026-01-15,USSD,Convoy of motorcycles setting up a camp near Muyinga. Looks dangerous.,,,Muyinga,1
+ef828bbb,08081237125,2026-05-01,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+ee37cfbb,08015224394,2018-08-16,WEB_APP,I observed convoy of motorcycles buying bulk fuel outside Kasai-Central. They are armed.,-6.066,22.2643,Kasai-Central,1
+555e496a,08072370090,2026-05-10,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+92f0ef57,08054965210,2014-06-12,WEB_APP,I observed armed group stockpiling rice and bread outside Haut-Katanga. They are armed.,-10.5155,27.6201,Haut-Katanga,1
+25ca0ade,08059181869,2023-10-27,WEB_APP,I observed unknown militia setting up a camp outside Segou. They are armed.,14.0513,-6.0029,Segou,1
+166cd211,08041875362,2021-07-09,USSD,Convoy of motorcycles moving heavy weapons near Jigawa. Looks dangerous.,,,Jigawa,1
+34903747,08054122228,2023-11-10,USSD,Unknown militia setting up a camp near South Darfur. Looks dangerous.,,,South Darfur,1
+61d42fa2,08025421559,2021-09-03,USSD,Unknown militia buying bulk fuel near Karuzi. Looks dangerous.,,,Karuzi,1
+bb22c419,08072083546,2025-04-04,USSD,Convoy of motorcycles stockpiling rice and bread near Middle Shabelle. Looks dangerous.,,,Middle Shabelle,1
+4a7a6fe6,08014302550,2022-07-06,USSD,Unknown militia setting up a camp near Lac. Looks dangerous.,,,Lac,1
+9413377d,08097814584,2026-05-17,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+be6334dd,08052971427,2019-01-04,USSD,Armed group stockpiling rice and bread near Boucle du Mouhoun. Looks dangerous.,,,Boucle du Mouhoun,1
+fc67ac20,08040531813,2016-06-29,USSD,Unknown militia setting up a camp near Central Darfur. Looks dangerous.,,,Central Darfur,1
+bde1ba06,08022969561,2019-03-06,USSD,Suspicious men moving heavy weapons near Kagadi. Looks dangerous.,,,Kagadi,1
+0dbd1c31,08060529396,2025-06-11,USSD,Armed group stockpiling rice and bread near Lower Shabelle. Looks dangerous.,,,Lower Shabelle,1
+10c35e4c,08082808075,2007-07-26,USSD,Suspicious men moving heavy weapons near Sud-Kivu. Looks dangerous.,,,Sud-Kivu,1
+93157ab6,08018928652,2020-10-21,USSD,Suspicious men buying bulk fuel near Jigawa. Looks dangerous.,,,Jigawa,1
+4d93b307,08035329104,2000-02-10,USSD,Convoy of motorcycles buying bulk fuel near Ziguinchor. Looks dangerous.,,,Ziguinchor,1
+093e859e,08076102620,2021-12-08,USSD,Armed group buying bulk fuel near Taraba. Looks dangerous.,,,Taraba,1
+ab72c046,08093180849,2025-02-26,USSD,Armed group moving heavy weapons near Amhara. Looks dangerous.,,,Amhara,1
+4bd82fa1,08051448218,2023-07-13,USSD,Unknown militia setting up a camp near Afar. Looks dangerous.,,,Afar,1
+d242d545,08072696790,2026-05-11,USSD,Market prices for yam are too high today.,,,Unknown,0
+1f04baad,08097900046,2021-04-29,USSD,Convoy of motorcycles moving heavy weapons near Ogun. Looks dangerous.,,,Ogun,1
+ff93cd67,08086269737,2005-05-13,USSD,Unknown militia stockpiling rice and bread near Bay. Looks dangerous.,,,Bay,1
+e8080992,08083104449,2025-08-20,USSD,Unknown militia moving heavy weapons near Lac. Looks dangerous.,,,Lac,1
+71f3be86,08080044552,2012-08-30,USSD,Suspicious men moving heavy weapons near Nord-Kivu. Looks dangerous.,,,Nord-Kivu,1
+12c19022,08064129991,2026-05-06,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+0abb0bd8,08034187443,2025-01-24,USSD,Suspicious men stockpiling rice and bread near Nairobi. Looks dangerous.,,,Nairobi,1
+6ccafab2,08019977941,2015-09-24,WEB_APP,I observed unknown militia stockpiling rice and bread outside Bujumbura Rural. They are armed.,-3.4626,29.4846,Bujumbura Rural,1
+3c5a74b8,08076682269,2021-06-23,USSD,Armed group setting up a camp near Khartoum. Looks dangerous.,,,Khartoum,1
+f8e978e1,08073807283,2003-04-16,USSD,Unknown militia stockpiling rice and bread near Lira. Looks dangerous.,,,Lira,1
+33d7b47e,08048334088,2025-05-08,USSD,Convoy of motorcycles setting up a camp near Nord. Looks dangerous.,,,Nord,1
+907abde4,08096477178,2022-07-15,WEB_APP,I observed armed group setting up a camp outside Cairo. They are armed.,30.0371,31.564,Cairo,1
+0b951646,08060396767,2023-04-12,USSD,Convoy of motorcycles buying bulk fuel near Ogun. Looks dangerous.,,,Ogun,1
+d2789f60,08065516921,2024-11-07,USSD,Suspicious men buying bulk fuel near Amhara. Looks dangerous.,,,Amhara,1
+fa31c52f,08054143323,2026-05-09,USSD,Market prices for yam are too high today.,,,Unknown,0
+3c9044fe,08048018520,2025-08-21,USSD,Armed group stockpiling rice and bread near Imo. Looks dangerous.,,,Imo,1
+60111f6c,08064247693,2024-12-13,USSD,Armed group buying bulk fuel near Mopti. Looks dangerous.,,,Mopti,1
+c19ea842,08095927742,2026-04-23,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+da3affde,08032134979,2025-05-08,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Nord. They are armed.,13.453,-2.2505,Nord,1
+e6884360,08056682312,2016-11-24,USSD,Suspicious men buying bulk fuel near Nugaal. Looks dangerous.,,,Nugaal,1
+d8de5fb5,08031025526,2024-08-01,USSD,Convoy of motorcycles setting up a camp near Cibitoke. Looks dangerous.,,,Cibitoke,1
+7b2f91c8,08069336209,2012-02-09,WEB_APP,I observed convoy of motorcycles setting up a camp outside Bulawayo. They are armed.,-20.1058,28.5345,Bulawayo,1
+9af3bf6c,08042017526,2026-05-15,USSD,Market prices for yam are too high today.,,,Unknown,0
+38c7d836,08018198397,2026-05-11,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+62559354,08070762298,2022-03-02,USSD,Armed group stockpiling rice and bread near Banadir. Looks dangerous.,,,Banadir,1
+083bcd14,08055109144,2024-02-14,USSD,Unknown militia moving heavy weapons near Katsina. Looks dangerous.,,,Katsina,1
+9d315bcf,08053827892,2023-07-21,USSD,Unknown militia setting up a camp near Menabe. Looks dangerous.,,,Menabe,1
+2c58289a,08026347477,2023-10-27,USSD,Convoy of motorcycles buying bulk fuel near Segou. Looks dangerous.,,,Segou,1
+5d679026,08076794039,2022-08-25,USSD,Unknown militia buying bulk fuel near Diffa. Looks dangerous.,,,Diffa,1
+1c4f6cf3,08019451244,2026-04-30,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+23b86a36,08077865791,2024-01-31,WEB_APP,I observed suspicious men setting up a camp outside Delta. They are armed.,5.7596,6.3272,Delta,1
+0e4f6c19,08041267331,2019-12-12,USSD,Unknown militia buying bulk fuel near Lac. Looks dangerous.,,,Lac,1
+db48c685,08079874718,2026-04-30,USSD,Market prices for yam are too high today.,,,Unknown,0
+8019d91d,08076167485,2024-07-31,WEB_APP,I observed armed group moving heavy weapons outside Analamanga. They are armed.,-18.6,47.5131,Analamanga,1
+ee4ec39c,08094702669,2026-05-05,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+d07d14c7,08075249045,2006-08-16,USSD,Convoy of motorcycles buying bulk fuel near Analamanga. Looks dangerous.,,,Analamanga,1
+aad75d31,08023638442,2013-01-25,USSD,Suspicious men setting up a camp near Kidal. Looks dangerous.,,,Kidal,1
+bb61dd65,08054190153,1997-09-11,WEB_APP,I observed unknown militia moving heavy weapons outside Equatoria. They are armed.,4.68,31.69,Equatoria,1
+827e522d,08047761964,2024-09-04,USSD,Convoy of motorcycles buying bulk fuel near Lagos. Looks dangerous.,,,Lagos,1
+fb493faf,08034529343,2005-05-13,USSD,Suspicious men moving heavy weapons near Bay. Looks dangerous.,,,Bay,1
+61f002ec,08032455828,2011-11-11,WEB_APP,I observed convoy of motorcycles stockpiling rice and bread outside Somali. They are armed.,7.2466,44.7279,Somali,1
+7d5bfd11,08057174497,2026-05-13,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+ac2393f1,08099874905,2012-10-26,USSD,Suspicious men stockpiling rice and bread near Lower Juba. Looks dangerous.,,,Lower Juba,1
+543b1005,08086027410,1997-09-11,USSD,Convoy of motorcycles stockpiling rice and bread near Equatoria. Looks dangerous.,,,Equatoria,1
+726f248d,08057311511,2023-03-15,USSD,Armed group setting up a camp near Cascades. Looks dangerous.,,,Cascades,1
+eee95c72,08095296160,2025-08-21,USSD,Armed group setting up a camp near Imo. Looks dangerous.,,,Imo,1
+721c84b1,08037153865,2024-09-04,USSD,Suspicious men stockpiling rice and bread near Lagos. Looks dangerous.,,,Lagos,1
+a7e973f4,08050527486,2019-04-18,USSD,Suspicious men stockpiling rice and bread near Mopti. Looks dangerous.,,,Mopti,1
+d1bb9732,08080093986,2012-08-01,USSD,Armed group buying bulk fuel near Banadir. Looks dangerous.,,,Banadir,1
+6bd4a1c5,08092414286,2020-03-26,USSD,Unknown militia moving heavy weapons near Sud-Kivu. Looks dangerous.,,,Sud-Kivu,1
+3ae5440e,08079660203,2025-01-24,USSD,Unknown militia moving heavy weapons near Nairobi. Looks dangerous.,,,Nairobi,1
+a79bb574,08011822346,2023-05-03,USSD,Convoy of motorcycles moving heavy weapons near Maniema. Looks dangerous.,,,Maniema,1
+dc3a8b5c,08062195237,2012-02-02,WEB_APP,I observed armed group setting up a camp outside Boeny. They are armed.,-16.2335,46.1286,Boeny,1
+4ca96479,08025794237,2025-06-19,USSD,Unknown militia moving heavy weapons near North Kordofan. Looks dangerous.,,,North Kordofan,1
+4b566efe,08095751825,2022-05-12,WEB_APP,I observed armed group setting up a camp outside Tanger-Tetouan-Al Hoceima. They are armed.,35.2182,-5.4348,Tanger-Tetouan-Al Hoceima,1
+c4bdf399,08094548878,2026-05-09,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+cb1f4de4,08043831217,2020-08-06,USSD,Suspicious men moving heavy weapons near Niger. Looks dangerous.,,,Niger,1
+1d1890fd,08078822527,2021-06-23,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Khartoum. They are armed.,15.915,33.1352,Khartoum,1
+65152ee3,08070901170,2026-05-01,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+797b9cb0,08023530452,2023-06-09,USSD,Unknown militia buying bulk fuel near Zamfara. Looks dangerous.,,,Zamfara,1
+8eb859ee,08078944296,2025-10-24,USSD,Armed group moving heavy weapons near Centre-Est. Looks dangerous.,,,Centre-Est,1
+52f69f0e,08061138921,2001-07-26,USSD,Convoy of motorcycles moving heavy weapons near Kisoro. Looks dangerous.,,,Kisoro,1
+43f4c646,08035412520,2015-08-21,USSD,Unknown militia setting up a camp near Bari. Looks dangerous.,,,Bari,1
+7a5adf8c,08051044240,2023-02-01,USSD,Suspicious men buying bulk fuel near Mopti. Looks dangerous.,,,Mopti,1
+127c8c65,08036478685,2026-05-11,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+7847f2bd,08091577292,2017-05-19,USSD,Convoy of motorcycles moving heavy weapons near Bujumbura Rural. Looks dangerous.,,,Bujumbura Rural,1
+b2f1968b,08038017605,2023-01-25,USSD,Unknown militia stockpiling rice and bread near Cabo Delgado. Looks dangerous.,,,Cabo Delgado,1
+79f75caf,08090720593,2014-09-18,USSD,Suspicious men stockpiling rice and bread near Banadir. Looks dangerous.,,,Banadir,1
+e472ca34,08019123763,2026-04-21,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+6713c243,08066861100,2005-04-14,USSD,Suspicious men moving heavy weapons near Tanganyika. Looks dangerous.,,,Tanganyika,1
+2109c5aa,08035980980,1998-01-23,USSD,Unknown militia buying bulk fuel near Katsina. Looks dangerous.,,,Katsina,1
+7e956f50,08042490942,2014-05-23,USSD,Unknown militia setting up a camp near Lower Shabelle. Looks dangerous.,,,Lower Shabelle,1
+f269a8a0,08068123702,2023-02-01,USSD,Armed group stockpiling rice and bread near Mopti. Looks dangerous.,,,Mopti,1
+91cf9cf1,08073739242,2021-09-03,WEB_APP,I observed armed group buying bulk fuel outside Karuzi. They are armed.,-3.149,30.0794,Karuzi,1
+f000beae,08065339810,2026-05-05,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+216aa8f7,08048243943,2024-11-27,USSD,Suspicious men stockpiling rice and bread near Edo. Looks dangerous.,,,Edo,1
+1a9aa1d6,08086949776,2020-06-10,USSD,Armed group setting up a camp near Nord-Ouest. Looks dangerous.,,,Nord-Ouest,1
+f20ff4bf,08077202012,2020-04-30,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Haut-Mbomou. They are armed.,6.5837,25.3754,Haut-Mbomou,1
+a2de8188,08053656177,2012-11-16,WEB_APP,I observed unknown militia stockpiling rice and bread outside Garissa. They are armed.,-0.519,40.3211,Garissa,1
+47e964f2,08063915793,2026-05-14,USSD,Market prices for yam are too high today.,,,Unknown,0
+78f00051,08024394923,2015-06-26,USSD,Convoy of motorcycles stockpiling rice and bread near Masvingo. Looks dangerous.,,,Masvingo,1
+6203414f,08041515696,2017-06-01,USSD,Convoy of motorcycles buying bulk fuel near Warrap. Looks dangerous.,,,Warrap,1
+3f85a8d1,08093963441,2026-05-01,USSD,Market prices for yam are too high today.,,,Unknown,0
+dc722ef3,08058738299,2012-02-09,USSD,Convoy of motorcycles stockpiling rice and bread near Bulawayo. Looks dangerous.,,,Bulawayo,1
+2f0277a8,08021070033,2024-12-13,USSD,Armed group stockpiling rice and bread near Mopti. Looks dangerous.,,,Mopti,1
+7376ae97,08021948528,2024-10-23,USSD,Unknown militia setting up a camp near Anambra. Looks dangerous.,,,Anambra,1
+5ecdaebf,08030711211,2021-02-10,USSD,Armed group buying bulk fuel near Ouaka. Looks dangerous.,,,Ouaka,1
+8e563df9,08012653655,2020-05-06,USSD,Armed group stockpiling rice and bread near Nana-Grebizi. Looks dangerous.,,,Nana-Grebizi,1
+bfdceac9,08034333067,2026-05-18,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+c242f55b,08043018086,2010-11-19,USSD,Unknown militia setting up a camp near Haut-Mbomou. Looks dangerous.,,,Haut-Mbomou,1
+ad96ebe8,08020181080,1997-09-25,USSD,Armed group buying bulk fuel near Boumerdes. Looks dangerous.,,,Boumerdes,1
+182cac47,08034692713,2023-06-09,WEB_APP,I observed armed group stockpiling rice and bread outside Zamfara. They are armed.,12.0829,6.0025,Zamfara,1
+3113b05b,08082153896,2025-06-19,WEB_APP,I observed armed group setting up a camp outside North Kordofan. They are armed.,14.3894,29.437,North Kordofan,1
+0b7aaf8c,08062887475,2017-11-03,USSD,Unknown militia buying bulk fuel near Karuzi. Looks dangerous.,,,Karuzi,1
+a25c6f6b,08041256715,2024-11-27,USSD,Suspicious men stockpiling rice and bread near Edo. Looks dangerous.,,,Edo,1
+07750649,08029011905,2023-08-03,USSD,Armed group buying bulk fuel near Enugu. Looks dangerous.,,,Enugu,1
+26060ff9,08059731485,2023-12-07,USSD,Suspicious men stockpiling rice and bread near Borno. Looks dangerous.,,,Borno,1
+b92098be,08027133196,2025-02-27,USSD,Convoy of motorcycles stockpiling rice and bread near Centre-Nord. Looks dangerous.,,,Centre-Nord,1
+4b2ac745,08012919521,2026-05-19,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+95085623,08070307500,2018-03-29,USSD,Suspicious men buying bulk fuel near Lower Juba. Looks dangerous.,,,Lower Juba,1
+fd90babf,08043827923,2022-07-06,USSD,Armed group moving heavy weapons near Lac. Looks dangerous.,,,Lac,1
+8a333b3e,08025646549,2023-09-22,USSD,Suspicious men setting up a camp near Anambra. Looks dangerous.,,,Anambra,1
+5c4fe9ce,08028011946,2019-01-17,USSD,Convoy of motorcycles stockpiling rice and bread near North Sinai. Looks dangerous.,,,North Sinai,1
+64a61fb0,08037789224,2026-05-18,USSD,Market prices for yam are too high today.,,,Unknown,0
+807c3419,08088871606,2022-01-05,USSD,Unknown militia moving heavy weapons near Garissa. Looks dangerous.,,,Garissa,1
+7a1419ad,08080980762,2014-04-09,USSD,Armed group buying bulk fuel near Tshopo. Looks dangerous.,,,Tshopo,1
+8e476519,08012126571,2026-05-18,USSD,Market prices for yam are too high today.,,,Unknown,0
+b70f768e,08094040876,2019-10-31,USSD,Convoy of motorcycles moving heavy weapons near Haute Matsiatra. Looks dangerous.,,,Haute Matsiatra,1
+fd00902c,08077110104,2023-02-01,USSD,Armed group buying bulk fuel near Borno. Looks dangerous.,,,Borno,1
+ccbda0f7,08015625685,2020-11-04,USSD,Convoy of motorcycles moving heavy weapons near Sud-Ouest. Looks dangerous.,,,Sud-Ouest,1
+e518a4d7,08053754990,2019-08-21,USSD,Suspicious men stockpiling rice and bread near Kemo. Looks dangerous.,,,Kemo,1
+1b00eb64,08025521854,2017-02-24,USSD,Armed group moving heavy weapons near Kirundo. Looks dangerous.,,,Kirundo,1
+859ffb88,08023395945,2020-10-16,USSD,Convoy of motorcycles moving heavy weapons near Middle Shabelle. Looks dangerous.,,,Middle Shabelle,1
+f82bd5f4,08046982502,2026-05-01,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+02935a67,08086289114,2026-05-04,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+038b0e0a,08089523933,2012-12-12,USSD,Unknown militia buying bulk fuel near Lagunes. Looks dangerous.,,,Lagunes,1
+097d4cfd,08077960366,2026-05-08,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+6dce84b7,08034454753,2022-12-07,USSD,Convoy of motorcycles moving heavy weapons near Tillaberi. Looks dangerous.,,,Tillaberi,1
+372e652b,08080241078,2022-05-19,WEB_APP,I observed unknown militia stockpiling rice and bread outside Agadez. They are armed.,19.4203,10.6873,Agadez,1
+75537844,08076566738,2025-10-01,USSD,Unknown militia moving heavy weapons near Khartoum. Looks dangerous.,,,Khartoum,1
+63eab876,08035372479,2020-02-19,USSD,Suspicious men stockpiling rice and bread near Enugu. Looks dangerous.,,,Enugu,1
+a293d3fb,08094013913,2007-08-15,USSD,Suspicious men moving heavy weapons near Kidal. Looks dangerous.,,,Kidal,1
+68835b52,08085923543,2026-05-12,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+35971ad8,08068627234,2021-01-01,WEB_APP,I observed armed group stockpiling rice and bread outside Ombella-M'Poko. They are armed.,4.8791,18.1909,Ombella-M'Poko,1
+d20d24b7,08076795310,2023-01-18,WEB_APP,I observed unknown militia setting up a camp outside Mbarara. They are armed.,-0.4875,30.6276,Mbarara,1
+3584dc42,08016586362,1999-06-16,WEB_APP,I observed armed group moving heavy weapons outside Bangui. They are armed.,4.3755,18.5531,Bangui,1
+158db5bb,08013384405,2014-07-04,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Lower Shabelle. They are armed.,1.9714,44.6595,Lower Shabelle,1
+55ff3a12,08041940429,2023-07-21,USSD,Convoy of motorcycles buying bulk fuel near Menabe. Looks dangerous.,,,Menabe,1
+7407b8fe,08047466045,2005-04-14,USSD,Convoy of motorcycles stockpiling rice and bread near Tanganyika. Looks dangerous.,,,Tanganyika,1
+906e6689,08093468953,2019-10-31,USSD,Convoy of motorcycles buying bulk fuel near Haute Matsiatra. Looks dangerous.,,,Haute Matsiatra,1
+e3892bcd,08045704288,2015-06-04,USSD,Convoy of motorcycles buying bulk fuel near Ruyigi. Looks dangerous.,,,Ruyigi,1
+e3fcd70d,08027523323,2025-04-25,USSD,Suspicious men stockpiling rice and bread near Savannah. Looks dangerous.,,,Savannah,1
+2de815cc,08040861978,2021-01-06,WEB_APP,I observed convoy of motorcycles setting up a camp outside Osun. They are armed.,7.5429,4.5348,Osun,1
+85a07d64,08013347689,2015-09-24,USSD,Suspicious men stockpiling rice and bread near Bujumbura Rural. Looks dangerous.,,,Bujumbura Rural,1
+1de2c42c,08010236723,2021-12-08,USSD,Armed group moving heavy weapons near Taraba. Looks dangerous.,,,Taraba,1
+f8752652,08048940829,2020-02-19,USSD,Unknown militia buying bulk fuel near Enugu. Looks dangerous.,,,Enugu,1
+3def3d2f,08031409216,2020-05-07,USSD,Suspicious men setting up a camp near Central Darfur. Looks dangerous.,,,Central Darfur,1
+eca903df,08045971551,2025-06-20,WEB_APP,I observed armed group stockpiling rice and bread outside Ondo. They are armed.,6.8213,4.8633,Ondo,1
+60910677,08081411788,2020-09-02,USSD,Armed group moving heavy weapons near Sousse. Looks dangerous.,,,Sousse,1
+e00856d3,08085390313,2026-05-15,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+b5bbd674,08068167979,2024-10-24,USSD,Convoy of motorcycles stockpiling rice and bread near Ituri. Looks dangerous.,,,Ituri,1
+0e4fe957,08039198558,2014-05-02,USSD,Armed group buying bulk fuel near Banadir. Looks dangerous.,,,Banadir,1
+3997c53b,08079079676,2020-05-06,USSD,Armed group moving heavy weapons near Nana-Grebizi. Looks dangerous.,,,Nana-Grebizi,1
+1ebc6300,08059866031,2019-01-04,WEB_APP,I observed convoy of motorcycles stockpiling rice and bread outside Boucle du Mouhoun. They are armed.,12.4738,-3.5892,Boucle du Mouhoun,1
+241f8bba,08038175732,2026-05-03,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+1418aca7,08039766935,2026-05-15,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+e216265c,08014021857,2019-09-13,USSD,Unknown militia stockpiling rice and bread near Sud-Ouest. Looks dangerous.,,,Sud-Ouest,1
+5b6a154a,08028870245,2017-01-13,USSD,Convoy of motorcycles stockpiling rice and bread near South Kordofan. Looks dangerous.,,,South Kordofan,1
+007532d2,08082977790,2018-11-15,USSD,Unknown militia setting up a camp near Kabarole. Looks dangerous.,,,Kabarole,1
+4c1f9519,08014976729,2012-11-09,USSD,Unknown militia buying bulk fuel near Nord-Kivu. Looks dangerous.,,,Nord-Kivu,1
+6f21936e,08010251052,2021-01-22,WEB_APP,I observed armed group moving heavy weapons outside Ituri. They are armed.,2.1295,29.0513,Ituri,1
+d79f9a80,08025043176,2026-05-09,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+3a5b6fe3,08090693678,2026-05-03,USSD,Market prices for yam are too high today.,,,Unknown,0
+0ad11f42,08016285940,2026-04-28,USSD,Market prices for yam are too high today.,,,Unknown,0
+94a5a5e5,08038510379,2025-01-15,USSD,Unknown militia stockpiling rice and bread near Galgaduud. Looks dangerous.,,,Galgaduud,1
+45332efd,08023098201,2018-08-16,USSD,Unknown militia moving heavy weapons near Kasai-Central. Looks dangerous.,,,Kasai-Central,1
+ef91b7af,08093128133,2026-05-10,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+4a8f7afd,08037902550,2022-04-22,WEB_APP,I observed unknown militia moving heavy weapons outside Rivers. They are armed.,5.0357,6.8396,Rivers,1
+941b3b35,08010876395,2026-05-09,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+f6fad613,08016928576,2026-01-07,USSD,Suspicious men setting up a camp near Diffa. Looks dangerous.,,,Diffa,1
+b385fe14,08015317563,2018-12-27,USSD,Armed group buying bulk fuel near Middle Juba. Looks dangerous.,,,Middle Juba,1
+9d70f74e,08012462048,2021-07-02,WEB_APP,I observed armed group stockpiling rice and bread outside Lower Shabelle. They are armed.,1.9714,44.6595,Lower Shabelle,1
+225934c8,08068430174,2025-04-10,WEB_APP,I observed convoy of motorcycles setting up a camp outside Koulikoro. They are armed.,13.4789,-7.6171,Koulikoro,1
+ac39774e,08095266082,2024-09-05,USSD,Suspicious men buying bulk fuel near Bayelsa. Looks dangerous.,,,Bayelsa,1
+4b7edb26,08081158185,2020-11-04,USSD,Suspicious men moving heavy weapons near Sud-Ouest. Looks dangerous.,,,Sud-Ouest,1
+90c7a23a,08058521147,2021-04-29,WEB_APP,I observed unknown militia stockpiling rice and bread outside Ogun. They are armed.,7.1168,3.2672,Ogun,1
+90288cb3,08038339483,2025-05-30,USSD,Convoy of motorcycles buying bulk fuel near Oromia. Looks dangerous.,,,Oromia,1
+1c1d00b8,08078346345,2022-11-18,USSD,Convoy of motorcycles setting up a camp near Ituri. Looks dangerous.,,,Ituri,1
+9cd6825b,08057506789,2022-02-16,USSD,Suspicious men stockpiling rice and bread near Akwa Ibom. Looks dangerous.,,,Akwa Ibom,1
+bcf90920,08088965059,2019-05-17,USSD,Unknown militia stockpiling rice and bread near KwaZulu-Natal. Looks dangerous.,,,KwaZulu-Natal,1
+93b27b4f,08057871142,2023-07-13,WEB_APP,I observed convoy of motorcycles stockpiling rice and bread outside Afar. They are armed.,11.6905,40.8789,Afar,1
+6992a03d,08034485295,2026-05-03,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+ba8814cd,08088912409,2026-05-12,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+c4e9e608,08071214880,2022-05-18,USSD,Armed group stockpiling rice and bread near Mopti. Looks dangerous.,,,Mopti,1
+80dd693d,08022748950,2026-05-03,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+c3b5b839,08014353814,2026-05-04,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+b5555486,08086752826,2024-10-23,USSD,Armed group stockpiling rice and bread near Anambra. Looks dangerous.,,,Anambra,1
+4ca66dea,08040376086,2026-04-26,USSD,Market prices for yam are too high today.,,,Unknown,0
+300bc134,08025939795,2000-02-10,USSD,Armed group moving heavy weapons near Ziguinchor. Looks dangerous.,,,Ziguinchor,1
+5a781f46,08034150631,2026-04-27,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+d4e151a7,08058737630,2026-05-15,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+c3239e94,08043062374,2022-03-02,USSD,Armed group stockpiling rice and bread near Banadir. Looks dangerous.,,,Banadir,1
+0a76a2d1,08044330751,1997-04-24,USSD,Suspicious men stockpiling rice and bread near Zaire. Looks dangerous.,,,Zaire,1
+1bd659a3,08086788893,2018-03-29,USSD,Suspicious men stockpiling rice and bread near Lower Juba. Looks dangerous.,,,Lower Juba,1
+8b5fd8ec,08051526268,2023-02-24,WEB_APP,I observed convoy of motorcycles setting up a camp outside Tillaberi. They are armed.,13.7992,1.8771,Tillaberi,1
+f50b1156,08082691085,2023-03-15,USSD,Armed group stockpiling rice and bread near Cascades. Looks dangerous.,,,Cascades,1
+49661454,08097621651,2001-07-26,WEB_APP,I observed convoy of motorcycles buying bulk fuel outside Kisoro. They are armed.,-1.199,29.6701,Kisoro,1
+81a5fa79,08055923539,2026-04-30,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+0ffef6db,08066664461,2026-05-01,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+ef07f6be,08050944143,2022-09-28,USSD,Convoy of motorcycles stockpiling rice and bread near Cascades. Looks dangerous.,,,Cascades,1
+22317aa6,08081954502,2019-01-24,USSD,Convoy of motorcycles stockpiling rice and bread near North Sinai. Looks dangerous.,,,North Sinai,1
+fbab3b00,08041284726,2017-11-03,USSD,Suspicious men buying bulk fuel near Karuzi. Looks dangerous.,,,Karuzi,1
+54b0be54,08084945001,2026-05-15,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+e3b983a8,08073985531,2015-06-04,WEB_APP,I observed convoy of motorcycles moving heavy weapons outside Kirundo. They are armed.,-2.5556,30.1656,Kirundo,1
+c9665958,08051458817,2023-07-07,USSD,Armed group setting up a camp near Kwara. Looks dangerous.,,,Kwara,1
+b9dc0a9e,08070090750,2000-12-14,USSD,Unknown militia stockpiling rice and bread near Kassala. Looks dangerous.,,,Kassala,1
+21ee11d2,08029339950,2023-11-10,USSD,Suspicious men stockpiling rice and bread near South Darfur. Looks dangerous.,,,South Darfur,1
+367fcf26,08049433280,2018-08-31,USSD,Armed group buying bulk fuel near Banadir. Looks dangerous.,,,Banadir,1
+8bc840f4,08038865860,2026-05-01,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+642fc753,08090198234,2026-05-12,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+3ee02b34,08078060136,2016-09-16,USSD,Suspicious men setting up a camp near Oromia. Looks dangerous.,,,Oromia,1
+9cccf74d,08054215899,2026-04-29,USSD,Market prices for yam are too high today.,,,Unknown,0
+168247bf,08030544107,2013-05-15,USSD,Unknown militia moving heavy weapons near Haut-Lomami. Looks dangerous.,,,Haut-Lomami,1
+4750ec42,08079786163,2008-12-05,USSD,Armed group moving heavy weapons near Masvingo. Looks dangerous.,,,Masvingo,1
+f29bf79b,08082170220,2023-03-31,USSD,Suspicious men buying bulk fuel near Kotido. Looks dangerous.,,,Kotido,1
+a3f3cd29,08093243634,2016-09-16,USSD,Unknown militia setting up a camp near Oromia. Looks dangerous.,,,Oromia,1
+77755858,08048024330,2018-08-31,USSD,Armed group setting up a camp near Banadir. Looks dangerous.,,,Banadir,1
+c3bb4cde,08075642021,2026-05-06,USSD,Market prices for yam are too high today.,,,Unknown,0
+474dddf9,08028845246,2018-05-02,USSD,Unknown militia moving heavy weapons near Ituri. Looks dangerous.,,,Ituri,1
+ffbba220,08049944635,2026-03-06,USSD,Armed group moving heavy weapons near Ziguinchor. Looks dangerous.,,,Ziguinchor,1
+2f21d890,08060085739,2023-07-27,USSD,Convoy of motorcycles stockpiling rice and bread near Ondo. Looks dangerous.,,,Ondo,1
+695d9d5b,08067416001,2025-12-31,USSD,Suspicious men moving heavy weapons near Amhara. Looks dangerous.,,,Amhara,1
+1bb13b00,08019042305,2023-06-01,USSD,Suspicious men setting up a camp near Galgaduud. Looks dangerous.,,,Galgaduud,1
+042dc365,08075801406,2026-05-10,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+0fdcd8b4,08023411880,2026-05-07,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+41356ab4,08038301269,2026-05-05,USSD,Market prices for yam are too high today.,,,Unknown,0
+8c22f7da,08051933395,2026-05-10,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+0e4c7d1b,08036093609,2026-04-22,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+362dd0e5,08033863756,2026-04-15,USSD,Unknown militia stockpiling rice and bread near Nord-Ouest. Looks dangerous.,,,Nord-Ouest,1
+d40f20c9,08092524571,2026-05-13,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+4a05f4d4,08064727188,2026-04-23,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+d8a5a195,08069785697,2026-02-11,USSD,Suspicious men moving heavy weapons near Borno. Looks dangerous.,,,Borno,1
+a7da1dbf,08021450042,2026-05-03,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+912ba3a7,08048139142,2018-11-15,USSD,Suspicious men setting up a camp near Kabarole. Looks dangerous.,,,Kabarole,1
+ab3415bc,08023238605,2018-04-19,WEB_APP,I observed armed group setting up a camp outside Harare. They are armed.,-17.8552,31.0523,Harare,1
+42408c55,08084150897,2012-10-26,USSD,Convoy of motorcycles buying bulk fuel near Lower Juba. Looks dangerous.,,,Lower Juba,1
+8cfd2db4,08095752397,2012-12-28,USSD,Unknown militia setting up a camp near Nord-Kivu. Looks dangerous.,,,Nord-Kivu,1
+e63adf2e,08090351713,2022-12-15,USSD,Convoy of motorcycles stockpiling rice and bread near Lower Juba. Looks dangerous.,,,Lower Juba,1
+89fa5d26,08083202964,2026-05-03,USSD,Market prices for yam are too high today.,,,Unknown,0
+c93782a1,08085681466,2025-04-10,WEB_APP,I observed convoy of motorcycles stockpiling rice and bread outside Koulikoro. They are armed.,13.4789,-7.6171,Koulikoro,1
+300be4fe,08015046918,2014-12-19,USSD,Convoy of motorcycles setting up a camp near East. Looks dangerous.,,,East,1
+2769971f,08034624760,2021-11-03,WEB_APP,I observed unknown militia buying bulk fuel outside Ogun. They are armed.,7.1168,3.2672,Ogun,1
+27e581b6,08010324287,2020-12-23,WEB_APP,I observed convoy of motorcycles buying bulk fuel outside Nord-Ouest. They are armed.,6.4342,10.4682,Nord-Ouest,1
+351d37ee,08018890871,2026-05-18,USSD,Market prices for yam are too high today.,,,Unknown,0
+b394accd,08064521047,2020-05-13,USSD,Suspicious men moving heavy weapons near Mopti. Looks dangerous.,,,Mopti,1
+056d2122,08047649585,2025-08-20,WEB_APP,I observed suspicious men stockpiling rice and bread outside Lac. They are armed.,13.7534,14.1757,Lac,1
+183903f0,08099590856,2026-05-09,USSD,Market prices for yam are too high today.,,,Unknown,0
+04e91aac,08019860128,2026-04-27,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+ea2d390a,08091232136,2021-02-05,USSD,Suspicious men setting up a camp near Kaduna. Looks dangerous.,,,Kaduna,1
+0a185d97,08074026908,2026-04-27,USSD,Market prices for yam are too high today.,,,Unknown,0
+add406f4,08028221050,2015-06-04,USSD,Unknown militia stockpiling rice and bread near Ruyigi. Looks dangerous.,,,Ruyigi,1
+965e8330,08063939498,2021-02-26,USSD,Suspicious men stockpiling rice and bread near Sokoto. Looks dangerous.,,,Sokoto,1
+48c38896,08053800462,2019-01-17,USSD,Unknown militia stockpiling rice and bread near North Sinai. Looks dangerous.,,,North Sinai,1
+60735e18,08041899883,2026-05-06,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+d039db66,08069138614,2017-05-19,USSD,Convoy of motorcycles buying bulk fuel near Bujumbura Rural. Looks dangerous.,,,Bujumbura Rural,1
+d51456de,08044006482,2026-04-21,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+abaedb48,08034376170,2026-04-26,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+511e0f55,08060641121,2026-04-28,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+43284096,08064785548,2020-01-09,USSD,Armed group moving heavy weapons near Eastern. Looks dangerous.,,,Eastern,1
+1b4706a1,08092693245,2026-05-03,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+9a9857ff,08062496133,2010-12-10,USSD,Suspicious men setting up a camp near Boumerdes. Looks dangerous.,,,Boumerdes,1
+bb34f478,08035388104,2021-01-22,USSD,Armed group buying bulk fuel near Ituri. Looks dangerous.,,,Ituri,1
+3819ed48,08038660176,2023-03-01,USSD,Suspicious men moving heavy weapons near Sennar. Looks dangerous.,,,Sennar,1
+5f562e97,08026574399,1997-04-24,WEB_APP,I observed suspicious men moving heavy weapons outside Zaire. They are armed.,-6.8131,13.4709,Zaire,1
+3a07adeb,08038275102,2026-05-17,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+178af739,08086479786,2023-09-22,USSD,Suspicious men setting up a camp near Anambra. Looks dangerous.,,,Anambra,1
+da9fc190,08066042155,2026-04-25,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+4dd85a99,08036530365,2025-06-20,USSD,Convoy of motorcycles setting up a camp near Ondo. Looks dangerous.,,,Ondo,1
+7a0f3149,08025390467,2004-06-09,USSD,Suspicious men stockpiling rice and bread near South Darfur. Looks dangerous.,,,South Darfur,1
+22df4af8,08045100559,2024-11-15,USSD,Armed group stockpiling rice and bread near South. Looks dangerous.,,,South,1
+aeee4479,08083349098,2026-04-15,USSD,Convoy of motorcycles setting up a camp near Nord-Ouest. Looks dangerous.,,,Nord-Ouest,1
+78f7e3fa,08052711930,2025-01-15,WEB_APP,I observed suspicious men stockpiling rice and bread outside Galgaduud. They are armed.,4.985,46.8971,Galgaduud,1
+d97197d1,08032219984,2022-07-15,USSD,Convoy of motorcycles stockpiling rice and bread near Cairo. Looks dangerous.,,,Cairo,1
+542e16e5,08092509400,2004-03-25,WEB_APP,I observed armed group setting up a camp outside Tibesti. They are armed.,20.2226,18.2624,Tibesti,1
+b2c93127,08049323403,2026-05-04,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+7a96c489,08045500734,2012-02-02,USSD,Suspicious men buying bulk fuel near Boeny. Looks dangerous.,,,Boeny,1
+77b89f4e,08036778641,2026-04-29,USSD,Market prices for yam are too high today.,,,Unknown,0
+82eab4f4,08017468348,2016-08-04,WEB_APP,I observed armed group buying bulk fuel outside Eastern Equatoria. They are armed.,4.7554,33.3967,Eastern Equatoria,1
+2d7571f4,08070435790,2026-03-26,USSD,Suspicious men stockpiling rice and bread near Middle Juba. Looks dangerous.,,,Middle Juba,1
+ef44a417,08046520950,2019-03-06,USSD,Suspicious men moving heavy weapons near Kagadi. Looks dangerous.,,,Kagadi,1
+9ccc016e,08051370546,2026-05-16,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+79401191,08084073603,2025-04-25,USSD,Armed group buying bulk fuel near Savannah. Looks dangerous.,,,Savannah,1
+ae93a5ac,08081831524,2008-04-17,USSD,Suspicious men stockpiling rice and bread near Equatoria. Looks dangerous.,,,Equatoria,1
+d3be3a93,08025172945,2021-11-03,USSD,Suspicious men moving heavy weapons near Ogun. Looks dangerous.,,,Ogun,1
+a2ce7929,08064658979,2026-05-08,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+c257e786,08017400161,2020-05-28,USSD,Armed group moving heavy weapons near North Darfur. Looks dangerous.,,,North Darfur,1
+37eab478,08027363703,2019-05-09,USSD,Suspicious men setting up a camp near KwaZulu-Natal. Looks dangerous.,,,KwaZulu-Natal,1
+79bbd67c,08037669099,2026-05-14,USSD,Market prices for yam are too high today.,,,Unknown,0
+ee61c13c,08093970401,2025-04-02,USSD,Armed group buying bulk fuel near Alibori. Looks dangerous.,,,Alibori,1
+47f4f117,08054345932,2010-09-22,USSD,Convoy of motorcycles setting up a camp near Banadir. Looks dangerous.,,,Banadir,1
+2252db5d,08091252699,2018-07-26,USSD,Suspicious men setting up a camp near Nord-Kivu. Looks dangerous.,,,Nord-Kivu,1
+3b679b74,08011423584,2026-05-01,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+475c3d87,08012316088,2004-06-09,USSD,Unknown militia buying bulk fuel near South Darfur. Looks dangerous.,,,South Darfur,1
+8ed51a83,08033708780,2019-12-12,USSD,Armed group stockpiling rice and bread near Lac. Looks dangerous.,,,Lac,1
+a06505c3,08082775492,2026-04-21,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+d83ebbc5,08024122239,2026-05-18,USSD,Market prices for yam are too high today.,,,Unknown,0
+f867a3b8,08066246459,2007-08-15,USSD,Armed group buying bulk fuel near Kidal. Looks dangerous.,,,Kidal,1
+4fe126a0,08053462936,2026-05-15,USSD,Market prices for yam are too high today.,,,Unknown,0
+3a987df7,08025069121,2026-05-20,USSD,The road to the capital is blocked by a broken down truck.,,,Unknown,0
+695a2425,08092900593,2016-06-29,USSD,Suspicious men moving heavy weapons near Central Darfur. Looks dangerous.,,,Central Darfur,1
+b4f9084c,08057821740,2025-10-24,USSD,Convoy of motorcycles buying bulk fuel near Centre-Est. Looks dangerous.,,,Centre-Est,1
+452fa93c,08067084629,2004-12-08,WEB_APP,I observed convoy of motorcycles stockpiling rice and bread outside Tana River. They are armed.,-1.547,39.5517,Tana River,1
+6fd0bd53,08052086817,2013-07-19,USSD,Suspicious men setting up a camp near North Sinai. Looks dangerous.,,,North Sinai,1
+612b807a,08042850531,2026-04-26,USSD,Market prices for yam are too high today.,,,Unknown,0
+8b30e014,08073369482,2016-11-24,USSD,Armed group stockpiling rice and bread near Nugaal. Looks dangerous.,,,Nugaal,1
+9334fbd3,08029773711,2011-12-23,WEB_APP,I observed convoy of motorcycles buying bulk fuel outside Federal Capital Territory. They are armed.,8.985,7.1883,Federal Capital Territory,1
+80f8908e,08023928335,2010-12-10,USSD,Convoy of motorcycles buying bulk fuel near Boumerdes. Looks dangerous.,,,Boumerdes,1
+628e70f6,08025642362,2010-09-22,USSD,Convoy of motorcycles moving heavy weapons near Banadir. Looks dangerous.,,,Banadir,1
+2b21798b,08049716580,2015-06-26,USSD,Armed group buying bulk fuel near Masvingo. Looks dangerous.,,,Masvingo,1
+5ddef080,08083590651,2026-05-09,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+30634b6e,08015429499,2015-01-01,WEB_APP,I observed suspicious men buying bulk fuel outside Western Equatoria. They are armed.,5.5398,29.1458,Western Equatoria,1
+6de31730,08043690871,2026-05-14,USSD,Please we need the local government to fix the borehole.,,,Unknown,0
+8599a88b,08095806529,2020-08-06,USSD,Suspicious men moving heavy weapons near Niger. Looks dangerous.,,,Niger,1
+f8749409,08095461503,2020-06-10,WEB_APP,I observed unknown militia moving heavy weapons outside Nord-Ouest. They are armed.,6.4342,10.4682,Nord-Ouest,1
+76098761,08087441930,2022-03-24,USSD,Convoy of motorcycles stockpiling rice and bread near Bay. Looks dangerous.,,,Bay,1
+847f50e6,08019578466,2024-07-31,USSD,Armed group stockpiling rice and bread near Analamanga. Looks dangerous.,,,Analamanga,1
+de8a9ca1,08099178429,2010-05-26,USSD,Suspicious men stockpiling rice and bread near Somali. Looks dangerous.,,,Somali,1
+d9ebc07c,08030459146,2025-12-31,USSD,Convoy of motorcycles buying bulk fuel near Amhara. Looks dangerous.,,,Amhara,1
+9c3961ff,08018506422,2025-04-04,USSD,Armed group buying bulk fuel near Middle Shabelle. Looks dangerous.,,,Middle Shabelle,1
+d3c13b86,08087498811,2024-08-01,USSD,Suspicious men stockpiling rice and bread near Analamanga. Looks dangerous.,,,Analamanga,1
+54e051a4,08041278493,2003-04-16,USSD,Armed group setting up a camp near Lira. Looks dangerous.,,,Lira,1
+b5535cf8,08050869596,2025-04-02,USSD,Convoy of motorcycles setting up a camp near Alibori. Looks dangerous.,,,Alibori,1
+0926a97d,08018159389,1999-11-04,USSD,Armed group buying bulk fuel near Sassandra-Marahoue. Looks dangerous.,,,Sassandra-Marahoue,1
+6fd7df9e,08010747291,2026-05-17,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+b203a12c,08057511699,2016-11-30,USSD,Armed group stockpiling rice and bread near Ouaka. Looks dangerous.,,,Ouaka,1
+1ef6eb99,08096286279,2015-08-19,USSD,Unknown militia buying bulk fuel near Central Equatoria. Looks dangerous.,,,Central Equatoria,1
+f9689c72,08081203456,2022-04-21,USSD,Armed group moving heavy weapons near Warrap. Looks dangerous.,,,Warrap,1
+1cf57524,08076688141,2004-12-08,USSD,Unknown militia buying bulk fuel near Tana River. Looks dangerous.,,,Tana River,1
+792ae564,08073385056,2026-04-26,USSD,Fuel scarcity is getting worse in town.,,,Unknown,0
+2b572ec0,08025390772,2020-12-23,WEB_APP,I observed convoy of motorcycles setting up a camp outside Nord-Ouest. They are armed.,6.4342,10.4682,Nord-Ouest,1
