@@ -8,9 +8,10 @@ import os
 # Import your NLP engine
 from ai_models.nlp_engine import extract_intelligence
 from blockchain.ledger import DASNBlockchain
+from database.graph_engine import DASNGraphDB
 
-app = FastAPI(title="DASN Core API", version="3.0 - AI and Blockchain Enabled")
-dasn_ledger = DASNBlockchain()
+app = FastAPI(title="DASN Core API", version="4.0 - Full Stack")
+
 
 # 1. Load the Machine Learning Model at startup!
 BASE_DIR = os.path.dirname(__file__)
@@ -21,6 +22,12 @@ if os.path.exists(MODEL_PATH):
 else:
     print("WARNING: threat_model.pkl not found. Run train_classifier.py first!")
     classifier = None
+
+# 2. Initialize the Blockchain Ledger
+dasn_ledger = DASNBlockchain()
+
+# 3. Initialize Neo4j Graph DB Connection
+graph_db = DASNGraphDB("bolt://localhost:7687", "neo4j", "password123")
 
 class IntelligenceReport(BaseModel):
     phone_number: str
@@ -68,9 +75,14 @@ async def receive_report(report: IntelligenceReport):
             timestamp=timestamp
         )
         
+        # E: Graph Database Mapping. ONLY if it's a real threat
+
+        if threat_level == "CRITICAL_THREAT":
+            graph_db.map_intelligence(anonymous_id, structured_data)
+
         return {
             "status": "success",
-            "message": "Intelligence processed, classified, and anchored to Blockchain.",
+            "message": "Intelligence processed, classified, and anchored to Blockchain and Mapped.",
             "data": {
                 "anonymous_hash": anonymous_id,
                 "interface": report.interface_type,
