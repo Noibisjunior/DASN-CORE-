@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import hashlib
 from datetime import datetime
@@ -11,6 +12,14 @@ from blockchain.ledger import DASNBlockchain
 from database.graph_engine import DASNGraphDB
 
 app = FastAPI(title="DASN Core API", version="4.0 - Full Stack")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # 1. Load the Machine Learning Model at startup!
@@ -105,3 +114,12 @@ async def view_ledger():
         "chain": dasn_ledger.chain,
         "length": len(dasn_ledger.chain)
     }
+
+@app.get("/api/v1/graph/view")
+async def view_graph():
+    try:
+        # Fetch the nodes and links from Neo4j
+        data = graph_db.get_graph_data()
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

@@ -68,3 +68,32 @@ class DASNGraphDB:
                     "MERGE (a)-[:PROCURED]->(res)",
                     actor_name=actor.upper(), res_name=resource.lower()
                 )
+
+    def get_graph_data(self):
+        """Fetches the graph data in a React-friendly format."""
+        with self.driver.session() as session:
+            # Query extracts IDs, Labels, Names, and Relationships directly
+            query = """
+            MATCH (n)-[r]->(m)
+            RETURN id(n) AS source_id, labels(n)[0] AS source_label, coalesce(n.name, n.id) AS source_name,
+                   id(m) AS target_id, labels(m)[0] AS target_label, coalesce(m.name, m.id) AS target_name,
+                   type(r) AS rel_type
+            """
+            result = session.run(query)
+
+            nodes_dict = {}
+            links = []
+
+            for record in result:
+                s_id = str(record["source_id"])
+                t_id = str(record["target_id"])
+
+                # Deduplicate nodes
+                if s_id not in nodes_dict:
+                    nodes_dict[s_id] = {"id": s_id, "label": record["source_label"], "name": record["source_name"]}
+                if t_id not in nodes_dict:
+                    nodes_dict[t_id] = {"id": t_id, "label": record["target_label"], "name": record["target_name"]}
+
+                links.append({"source": s_id, "target": t_id, "name": record["rel_type"]})
+
+            return {"nodes": list(nodes_dict.values()), "links": links}
