@@ -12,6 +12,8 @@ import shutil
 from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 
+load_dotenv()
+
 # Import your NLP engine
 from App.ai_models.nlp_engine import extract_intelligence
 from App.blockchain.ledger import DASNBlockchain
@@ -23,7 +25,12 @@ app.mount("/uploads", StaticFiles(directory="Data/uploads"), name="uploads")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        os.getenv("FRONTEND_ORIGIN", "https://dasn-core-ro5d0kbua-noibisjuniors-projects.vercel.app"),
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -43,7 +50,6 @@ else:
 # 2. Initialize the Blockchain Ledger
 dasn_ledger = DASNBlockchain()
 
-load_dotenv()
 URI = os.getenv("NEO4J_URI")
 USERNAME = os.getenv("NEO4J_USERNAME")
 PASSWORD = os.getenv("NEO4J_PASSWORD")
