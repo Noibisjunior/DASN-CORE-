@@ -1,19 +1,29 @@
-from web3 import Web3 
+from web3 import Web3
 import json
 import os
+from dotenv import load_dotenv
+
+# Ensure environment variables are parsed cleanly
+load_dotenv()
 
 class DASNBlockchain:
     def __init__(self):
-        # 1. Connect Python directly to your Hardhat Ethereum Node
-        self.w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:8545'))
+        # 1. Connect Python directly to the Alchemy Sepolia Node
+        rpc_url = os.getenv("ALCHEMY_SEPOLIA_URL")
+        if not rpc_url:
+            print("CRITICAL: ALCHEMY_SEPOLIA_URL environment variable is missing!")
+            
+        self.w3 = Web3(Web3.HTTPProvider(rpc_url))
         
         if not self.w3.is_connected():
-            print("WARNING: Could not connect to local Ethereum node.")
+            print("WARNING: Could not connect to the remote Ethereum Sepolia node.")
+        else:
+            print("SUCCESS: Connected cleanly to Ethereum Sepolia via Alchemy.")
             
-        # 2. Your Deployed Contract Address
-        self.contract_address = self.w3.to_checksum_address("0x5fbdb2315678afecb367f032d93f642f64180aa3")
+        # 2. Deployed Contract Address
+        self.contract_address = self.w3.to_checksum_address("0x063c8b55e5a644457713e13d871fee2474aab663")
         
-        # 3. The Contract ABI (Compiled from your Solidity code)
+        # 3. The Contract ABI (Compiled from Solidity code)
         self.abi = [
             {
                 "inputs": [
@@ -48,21 +58,25 @@ class DASNBlockchain:
         # 4. Initialize the Contract Interface
         self.contract = self.w3.eth.contract(address=self.contract_address, abi=self.abi)
         
-        # 5. Use the first Hardhat account as the Admin/Command Center Wallet
-        if self.w3.is_connected():
-            self.admin_wallet = self.w3.eth.accounts[0]
+        # 5. Extract Private Key and derive the Public Account Address for Cloud Signing
+        self.private_key = os.getenv("DEPLOYER_PRIVATE_KEY")
+        if self.private_key:
+            # Safely handle keys with or without the '0x' prefix
+            if not self.private_key.startswith("0x"):
+                self.private_key = "0x" + self.private_key
+            self.admin_wallet = self.w3.eth.account.from_key(self.private_key).address
+            print(f"Loaded Account Signer: {self.admin_wallet}")
+        else:
+            print("WARNING: DEPLOYER_PRIVATE_KEY not configured. Write operations will fail.")
+            self.admin_wallet = None
 
         # 6. OFF-CHAIN PERSISTENCE SETUP
         self.db_file = "dasn_offchain_db.json"
         self.ui_cache = []
         self.reputation_cache = {}
         
-        # Load past data immediately when the server boots up!
         self.load_state()
 
-    # ==========================================
-    # NEW: OFF-CHAIN DATABASE METHODS
-    # ==========================================
     def load_state(self):
         """Loads the reports from the hard drive if the server restarted."""
         if os.path.exists(self.db_file):
@@ -71,7 +85,6 @@ class DASNBlockchain:
                 self.ui_cache = data.get('ui_cache', [])
                 self.reputation_cache = data.get('reputation_cache', {})
         else:
-            # Genesis Block if the file doesn't exist yet
             self.ui_cache.append({'index': 1, 'payload': {'message': 'Ethereum Genesis Connected'}})
             self.save_state()
 
@@ -82,18 +95,37 @@ class DASNBlockchain:
                 'ui_cache': self.ui_cache,
                 'reputation_cache': self.reputation_cache
             }, f, indent=4)
-    # ==========================================
 
     def anchor_intelligence(self, anonymous_id: str, threat_level: str, timestamp: str, raw_text: str = "", media_url: str = "", latitude: float = None, longitude: float = None):
         tx_receipt = "Ethereum Offline"
         historical_score = 0 
         
-        if self.w3.is_connected():
+        if self.w3.is_connected() and self.private_key:
             try:
+                # Read-only call works perfectly without gas or keys
                 historical_score = self.contract.functions.getReputationScore(anonymous_id).call()
-                tx_hash = self.contract.functions.anchorIntelligence(anonymous_id, threat_level, timestamp).transact({'from': self.admin_wallet})
+                
+                # Build transaction dictionary for public cloud execution
+                nonce = self.w3.eth.get_transaction_count(self.admin_wallet)
+                built_tx = self.contract.functions.anchorIntelligence(
+                    anonymous_id, threat_level, timestamp
+                ).build_transaction({
+                    'chainId': 11155111,  # Sepolia Chain ID
+                    'gas': 200000,
+                    'maxFeePerGas': self.w3.to_wei('50', 'gwei'),
+                    'maxPriorityFeePerGas': self.w3.to_wei('2', 'gwei'),
+                    'nonce': nonce,
+                    'from': self.admin_wallet
+                })
+                
+                # Sign transaction locally using your private key
+                signed_tx = self.w3.eth.account.sign_transaction(built_tx, private_key=self.private_key)
+                
+                # Send raw signed transaction payload to Alchemy
+                tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
                 receipt = self.w3.eth.wait_for_transaction_receipt(tx_hash)
                 tx_receipt = receipt.transactionHash.hex()
+                
             except Exception as e:
                 print(f"Ethereum Revert/Error: {e}")
 
@@ -110,33 +142,35 @@ class DASNBlockchain:
             "status": "PENDING" 
         }
         self.ui_cache.append({'index': len(self.ui_cache) + 1, 'payload': payload})
-        
-        # CRITICAL: Save to hard drive right after adding the new report!
         self.save_state()
         
         return payload
     
     def execute_reputation_contract(self, anonymous_id: str, is_valid: bool):
-        """
-        Triggers the Ethereum Reputable Score system.
-        """
         new_score = 0
-        if self.w3.is_connected():
+        if self.w3.is_connected() and self.private_key:
             try:
-                # 1. Send Validation Transaction to Ethereum
-                tx_hash = self.contract.functions.validateReport(
+                nonce = self.w3.eth.get_transaction_count(self.admin_wallet)
+                built_tx = self.contract.functions.validateReport(
                     anonymous_id, is_valid
-                ).transact({'from': self.admin_wallet})
+                ).build_transaction({
+                    'chainId': 11155111,
+                    'gas': 150000,
+                    'maxFeePerGas': self.w3.to_wei('50', 'gwei'),
+                    'maxPriorityFeePerGas': self.w3.to_wei('2', 'gwei'),
+                    'nonce': nonce,
+                    'from': self.admin_wallet
+                })
                 
+                signed_tx = self.w3.eth.account.sign_transaction(built_tx, private_key=self.private_key)
+                tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
                 self.w3.eth.wait_for_transaction_receipt(tx_hash)
-                
-                # 2. Read the new Score from Ethereum
+                 
                 new_score = self.contract.functions.getReputationScore(anonymous_id).call()
                 self.reputation_cache[anonymous_id] = new_score
-                
-                # CRITICAL: Save the updated score to hard drive!
                 self.save_state()
             except Exception as e:
                 print(f"Smart Contract Error: {e}")
                 
         return new_score
+    
