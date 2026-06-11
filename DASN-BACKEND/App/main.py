@@ -88,7 +88,7 @@ async def receive_report(
             with open(file_location, "wb+") as file_object:
                 shutil.copyfileobj(media_file.file, file_object)
             # This URL allows React to display the image!
-            media_url = f"http://127.0.0.1:8000/uploads/{file_name}"
+            media_url = f"https://dasn-core.onrender.com/uploads/{file_name}"
 
         structured_data = extract_intelligence(raw_text)
         
