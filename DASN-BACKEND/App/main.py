@@ -1,17 +1,25 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException,  Form, Request,UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import PlainTextResponse
+from pydantic import BaseModel
+from typing import Optional
 import hashlib
 from datetime import datetime
 import joblib
 import os
+import shutil
+from fastapi.staticfiles import StaticFiles
+from dotenv import load_dotenv
 
 # Import your NLP engine
-from ai_models.nlp_engine import extract_intelligence
-from blockchain.ledger import DASNBlockchain
-from database.graph_engine import DASNGraphDB
+from App.ai_models.nlp_engine import extract_intelligence
+from App.blockchain.ledger import DASNBlockchain
+from App.database.graph_engine import DASNGraphDB
 
 app = FastAPI(title="DASN Core API", version="4.0 - Full Stack")
+# Serve the uploads folder to the frontend
+app.mount("/uploads", StaticFiles(directory="Data/uploads"), name="uploads")
 
 app.add_middleware(
     CORSMiddleware,
@@ -35,8 +43,17 @@ else:
 # 2. Initialize the Blockchain Ledger
 dasn_ledger = DASNBlockchain()
 
-# 3. Initialize Neo4j Graph DB Connection
-graph_db = DASNGraphDB("bolt://localhost:7687", "neo4j", "password123")
+load_dotenv()
+URI = os.getenv("NEO4J_URI")
+USERNAME = os.getenv("NEO4J_USERNAME")
+PASSWORD = os.getenv("NEO4J_PASSWORD")
+
+if not PASSWORD:
+    print("WARNING: Neo4j Password not found in environment variables!")
+
+# 3. Initialize your Database using the secure variables
+graph_db = DASNGraphDB(URI, USERNAME, PASSWORD)
+
 
 class IntelligenceReport(BaseModel):
     phone_number: str
@@ -47,63 +64,49 @@ def hash_identity(msisdn: str) -> str:
     secret_salt = "DASN_NATIONAL_SEC_2026" 
     return hashlib.sha256((msisdn + secret_salt).encode()).hexdigest()
 
+# Ensure the uploads directory exists when the server starts
+os.makedirs("Data/uploads", exist_ok=True)
+
 @app.post("/api/v1/report/submit")
-async def receive_report(report: IntelligenceReport):
+async def receive_report(
+    phone_number: str = Form(...),
+    raw_text: str = Form(...),
+    interface_type: str = Form(...),
+    latitude: Optional[float] = Form(None),  # NEW: Accept GPS
+    longitude: Optional[float] = Form(None), # NEW: Accept GPS
+    media_file: Optional[UploadFile] = File(None)
+):
     try:
-        # Step A: Cryptography
-        anonymous_id = hash_identity(report.phone_number)
+        anonymous_id = hash_identity(phone_number)
         timestamp = datetime.utcnow().isoformat()
         
-        # Step B: AI Cognitive Extraction
-        structured_data = extract_intelligence(report.raw_text)
+        # Handle File Upload & Generate a Public URL for React
+        media_url = ""
+        if media_file:
+            file_name = f"{anonymous_id}_{media_file.filename}"
+            file_location = f"data/uploads/{file_name}"
+            with open(file_location, "wb+") as file_object:
+                shutil.copyfileobj(media_file.file, file_object)
+            # This URL allows React to display the image!
+            media_url = f"http://127.0.0.1:8000/uploads/{file_name}"
+
+        structured_data = extract_intelligence(raw_text)
         
-        # Step C: Real-Time Threat Classification
-        threat_level = "UNKNOWN"
-        threat_score = 0
-        
+        threat_level = "CIVILIAN_NOISE"
         if classifier:
-            feature_vector = [[
-                len(structured_data['resources']),
-                1 if len(structured_data['actors']) > 0 else 0,
-                1 if len(structured_data['locations']) > 0 else 0
-            ]]
-            
-            prediction = classifier.predict(feature_vector)[0]
-            if prediction == 1:
+            features = [[len(structured_data['resources']), 1 if len(structured_data['actors']) > 0 else 0, 1 if len(structured_data['locations']) > 0 else 0]]
+            if classifier.predict(features)[0] == 1:
                 threat_level = "CRITICAL_THREAT"
-                threat_score = 90 + (len(structured_data['resources']) * 2)
-            else:
-                threat_level = "CIVILIAN_NOISE"
-                threat_score = 10
                 
-        # Step D: Blockchain Anchoring 
-        # We only anchor the sanitized data to protect the informant
-        block_receipt = dasn_ledger.anchor_intelligence(
-            anonymous_id=anonymous_id,
-            threat_level=threat_level,
-            timestamp=timestamp
+        # NEW: Pass all the context to the ledger!
+        dasn_ledger.anchor_intelligence(
+            anonymous_id, threat_level, timestamp, raw_text, media_url, latitude, longitude
         )
         
-        # E: Graph Database Mapping. ONLY if it's a real threat
-
         if threat_level == "CRITICAL_THREAT":
             graph_db.map_intelligence(anonymous_id, structured_data)
-
-        return {
-            "status": "success",
-            "message": "Intelligence processed, classified, and anchored to Blockchain and Mapped.",
-            "data": {
-                "anonymous_hash": anonymous_id,
-                "interface": report.interface_type,
-                "raw_text": report.raw_text,
-                "ai_extraction": structured_data,
-                "analysis": {
-                    "threat_assessment": threat_level,
-                    "threat_score": threat_score
-                },
-                "blockchain_receipt": block_receipt # The proof of immutability!
-            }
-        }
+        
+        return {"status": "success", "data": {"anonymous_hash": anonymous_id}}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -111,8 +114,9 @@ async def receive_report(report: IntelligenceReport):
 @app.get("/api/v1/ledger/view")
 async def view_ledger():
     return {
-        "chain": dasn_ledger.chain,
-        "length": len(dasn_ledger.chain)
+        "chain": dasn_ledger.ui_cache,           # Changed from dasn_ledger.chain
+        "length": len(dasn_ledger.ui_cache),
+        "reputation_state": dasn_ledger.reputation_cache
     }
 
 @app.get("/api/v1/graph/view")
@@ -123,3 +127,86 @@ async def view_graph():
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/v1/ussd", response_class=PlainTextResponse)
+async def ussd_webhook(
+    sessionId: str = Form(...),
+    serviceCode: str = Form(...),
+    phoneNumber: str = Form(...),
+    text: str = Form(default=""),                # FIX: Defaults to empty string if omitted
+    networkCode: Optional[str] = Form(default=None) # FIX: Catches the telecom network code
+):
+    """
+    This endpoint intercepts live USSD traffic from Africa's Talking.
+    """
+    # The 'text' variable contains the user's input.
+    if text == "":
+        response = "CON Welcome to DASN Secure Intel.\nWhat did you observe?"
+        
+    else:
+        try:
+            # Step 1: Cryptography
+            anonymous_id = hash_identity(phoneNumber)
+            timestamp = datetime.utcnow().isoformat()
+            
+            # Step 2: AI NLP Engine
+            structured_data = extract_intelligence(text)
+            
+            # Step 3: Threat Classifier
+            threat_level = "CIVILIAN_NOISE"
+            if classifier:
+                features = [[
+                    len(structured_data['resources']),
+                    1 if len(structured_data['actors']) > 0 else 0,
+                    1 if len(structured_data['locations']) > 0 else 0
+                ]]
+                if classifier.predict(features)[0] == 1:
+                    threat_level = "CRITICAL_THREAT"
+                    
+            # Step 4: Blockchain Anchor
+            dasn_ledger.anchor_intelligence(anonymous_id, threat_level, timestamp)
+            
+            # Step 5: Graph Database
+            if threat_level == "CRITICAL_THREAT":
+                graph_db.map_intelligence(anonymous_id, structured_data)
+
+            response = "END Thank you.\nYour report has been safely submitted."
+            
+        except Exception as e:
+            print(f"USSD Error: {e}")
+            response = "END System error. Please try again later."
+
+    return response     
+
+
+
+# Data model for the security  action
+class ValidationAction(BaseModel):
+    anonymous_id: str
+    is_valid: bool
+
+@app.post("/api/v1/ledger/validate")
+async def validate_intelligence(action: ValidationAction):
+    try:
+        # Trigger Ethereum and get the new accumulated score (e.g., 20)
+        new_score = dasn_ledger.execute_reputation_contract(action.anonymous_id, action.is_valid)
+        
+        # AGGRESSIVE CACHE UPDATE: 
+        # Loop through EVERY block in the UI cache to update the score and status
+        for block in dasn_ledger.ui_cache:
+            if block['payload'].get('anonymous_id') == action.anonymous_id:
+                # Update the score on all of their cards
+                block['payload']['historical_score'] = new_score
+                
+                # Only change the status if it was pending
+                if block['payload'].get('status') == "PENDING":
+                    block['payload']['status'] = "VERIFIED" if action.is_valid else "DECOY"
+                    
+        # CRITICAL FIX: Save the new VERIFIED/DECOY statuses to the hard drive!
+        dasn_ledger.save_state()
+        
+        return {"status": "success", "new_score": new_score}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+   

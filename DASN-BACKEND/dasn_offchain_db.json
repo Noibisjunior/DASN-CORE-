@@ -1,0 +1,28 @@
+{
+    "ui_cache": [
+        {
+            "index": 1,
+            "payload": {
+                "message": "Ethereum Genesis Connected"
+            }
+        },
+        {
+            "index": 2,
+            "payload": {
+                "anonymous_id": "0825ff1c12dedfe2716fde6f602f2b507d5f8a83187174c0e068a342e525ec96",
+                "threat_level": "CRITICAL_THREAT",
+                "timestamp": "2026-06-07T15:22:47.584971",
+                "raw_text": "Armed group buying bulk fuel near Banadir. Looks dangerous",
+                "media_url": "http://127.0.0.1:8000/uploads/0825ff1c12dedfe2716fde6f602f2b507d5f8a83187174c0e068a342e525ec96_Screenshot_4-6-2026_193926_localhost.jpeg",
+                "latitude": 9.545361242671808,
+                "longitude": 6.47217189515482,
+                "eth_tx_hash": "Ethereum Offline",
+                "historical_score": 30,
+                "status": "VERIFIED"
+            }
+        }
+    ],
+    "reputation_cache": {
+        "0825ff1c12dedfe2716fde6f602f2b507d5f8a83187174c0e068a342e525ec96": 30
+    }
+}
