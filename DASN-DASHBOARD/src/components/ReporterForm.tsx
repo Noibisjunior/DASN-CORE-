@@ -99,7 +99,7 @@ export default function ReporterForm() {
                   if ("geolocation" in navigator) {
                     navigator.geolocation.getCurrentPosition(
                       (pos) => setLocation({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
-                      (err) => alert("Please allow location access to submit GPS coordinates.")
+                      (_err) => alert("Please allow location access to submit GPS coordinates.")
                     );
                   }
                 }}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { apiClient } from './api/client'
-import { ShieldAlert, Activity, Database, Users, Archive, ListTodo } from 'lucide-react'
+import { ShieldAlert, Database, Users, Archive, ListTodo } from 'lucide-react'
 import IntelligenceGraph from './components/IntelligenceGraph'
 import ReporterForm from './components/ReporterForm' 
 import './App.css'
