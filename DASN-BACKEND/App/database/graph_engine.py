@@ -2,8 +2,13 @@ from neo4j import GraphDatabase
 
 class DASNGraphDB:
     def __init__(self, uri, user, password):
-        # Establish connection to  Neo4j Desktop
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        # Establish connection to Neo4j Aura
+        self.driver = GraphDatabase.driver(
+            uri,
+            auth=(user, password),
+            connection_timeout=5,
+            max_transaction_retry_time=5,
+        )
 
     def close(self):
         self.driver.close()

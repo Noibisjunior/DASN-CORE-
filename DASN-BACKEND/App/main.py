@@ -90,7 +90,7 @@ async def receive_report(
         media_url = ""
         if media_file:
             file_name = f"{anonymous_id}_{media_file.filename}"
-            file_location = f"data/uploads/{file_name}"
+            file_location = f"Data/uploads/{file_name}"
             with open(file_location, "wb+") as file_object:
                 shutil.copyfileobj(media_file.file, file_object)
             # This URL allows React to display the image!
@@ -110,7 +110,10 @@ async def receive_report(
         )
         
         if threat_level == "CRITICAL_THREAT":
-            graph_db.map_intelligence(anonymous_id, structured_data)
+            try:
+                graph_db.map_intelligence(anonymous_id, structured_data)
+            except Exception as graph_err:
+                print(f"WARNING: Neo4j graph mapping failed (non-fatal): {graph_err}")
         
         return {"status": "success", "data": {"anonymous_hash": anonymous_id}}
     except Exception as e:
