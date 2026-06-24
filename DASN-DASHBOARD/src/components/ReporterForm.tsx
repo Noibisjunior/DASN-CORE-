@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../api/client';
-import { Send, ShieldCheck, CheckCircle, Paperclip } from 'lucide-react';
+import { Send, ShieldCheck, CheckCircle, Paperclip, MapPin } from 'lucide-react';
 
 export default function ReporterForm() {
   const [rawText, setRawText] = useState('');
@@ -33,7 +33,6 @@ export default function ReporterForm() {
     setStatus('submitting');
     
     const formData = new FormData();
-    // FIX: We now send the persistent informantId instead of the temporary sessionToken!
     formData.append('phone_number', informantId); 
     formData.append('raw_text', rawText);
     formData.append('interface_type', 'WEB_APP');
@@ -63,38 +62,74 @@ export default function ReporterForm() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', background: 'white', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
-      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-        <ShieldCheck size={48} color="#10b981" style={{ margin: '0 auto' }} />
-        <h2 style={{ color: '#1f2937' }}>Anonymous Secure Tip Line</h2>
-        <p style={{ color: '#6b7280' }}>Zero PII collected. Your identity is cryptographically secure.</p>
+    <div className="cit-card">
+      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.1)', marginBottom: '15px' }}>
+          <ShieldCheck size={40} color="var(--cit-success)" />
+        </div>
+        <h2 style={{ color: 'var(--cit-text-main)', fontSize: '28px', marginBottom: '8px' }}>Anonymous Tip Line</h2>
+        <p style={{ color: 'var(--cit-text-muted)', fontSize: '15px' }}>Zero PII collected. Your identity is cryptographically secure.</p>
       </div>
 
       {status === 'success' ? (
-        <div style={{ background: '#d1fae5', padding: '15px', borderRadius: '8px', border: '1px solid #10b981', textAlign: 'center' }}>
-          <h3 style={{ color: '#065f46', margin: '0 0 10px 0' }}>Report Submitted Safely</h3>
-          <p style={{ color: '#047857', fontSize: '14px', wordBreak: 'break-all' }}>
-            <strong>Your Anonymity Receipt:</strong><br/>{receipt}
+        <div style={{ background: '#ecfdf5', padding: '25px', borderRadius: '12px', border: '1px solid #a7f3d0', textAlign: 'center', animation: 'fadeIn 0.5s ease' }}>
+          <CheckCircle size={48} color="var(--cit-success)" style={{ margin: '0 auto 15px auto' }} />
+          <h3 style={{ color: '#065f46', margin: '0 0 10px 0', fontSize: '20px' }}>Report Submitted Safely</h3>
+          <p style={{ color: '#047857', fontSize: '15px', marginBottom: '20px' }}>
+            The grid has received your intelligence.
           </p>
-          <button onClick={() => setStatus('idle')} style={{ marginTop: '15px', padding: '8px 16px', background: '#10b981', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+          <div style={{ background: 'white', padding: '15px', borderRadius: '8px', border: '1px dashed #a7f3d0', marginBottom: '20px' }}>
+            <span style={{ display: 'block', fontSize: '12px', color: '#059669', fontWeight: '600', textTransform: 'uppercase', marginBottom: '5px' }}>Anonymity Receipt</span>
+            <span style={{ wordBreak: 'break-all', fontFamily: 'var(--font-mono)', fontSize: '14px', color: '#064e3b' }}>{receipt}</span>
+          </div>
+          <button onClick={() => setStatus('idle')} className="cit-btn cit-btn-success" style={{ width: '100%' }}>
             Submit Another Report
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           
-          {/* NEW: Visual Feedback showing the Informant their persistent ID */}
           {informantId && (
-            <div style={{ background: '#f3f4f6', padding: '10px', borderRadius: '6px', fontSize: '12px', border: '1px solid #e5e7eb', textAlign: 'center' }}>
-              <span style={{ color: '#6b7280' }}>Device Wallet ID: </span>
-              <strong style={{ color: '#10b981', fontFamily: 'monospace', fontSize: '14px' }}>{informantId}</strong>
+            <div style={{ background: '#f8fafc', padding: '12px 15px', borderRadius: '8px', fontSize: '13px', border: '1px solid var(--cit-border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ color: 'var(--cit-text-muted)', fontWeight: '500' }}>Device Wallet ID</span>
+              <span style={{ color: 'var(--cit-success)', fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: '600', letterSpacing: '0.5px' }}>{informantId}</span>
             </div>
           )}
 
           <div>
-            <div style={{ marginBottom: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <label style={{ fontWeight: '600', color: 'var(--cit-text-main)', fontSize: '15px' }}>What did you observe?</label>
+            </div>
+            <textarea 
+              required
+              className="cit-input"
+              value={rawText}
+              onChange={(e) => setRawText(e.target.value)}
+              placeholder="E.g., Armed men stockpiling rice and fuel near the warehouse..."
+              rows={5}
+            />
+          </div>
+
+          <div style={{ display: 'flex', gap: '15px' }}>
+            <div style={{ flex: 1 }}>
+              <label className="cit-file-drop" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', height: '100%', justifyContent: 'center' }}>
+                {mediaFile ? <CheckCircle color="var(--cit-success)" size={28} /> : <Paperclip color="var(--cit-text-muted)" size={28} />}
+                <span style={{ color: mediaFile ? 'var(--cit-success)' : 'var(--cit-text-muted)', fontWeight: '500', fontSize: '14px' }}>
+                  {mediaFile ? mediaFile.name : "Attach Image / Video"}
+                </span>
+                <input 
+                  type="file" 
+                  accept="image/*,video/*"
+                  onChange={(e) => setMediaFile(e.target.files ? e.target.files[0] : null)}
+                  style={{ display: 'none' }}
+                />
+              </label>
+            </div>
+            
+            <div style={{ flex: 1, display: 'flex' }}>
               <button 
                 type="button" 
+                className={`cit-btn ${location ? 'cit-btn-success' : 'cit-btn-warning'}`}
                 onClick={() => {
                   if ("geolocation" in navigator) {
                     navigator.geolocation.getCurrentPosition(
@@ -103,42 +138,21 @@ export default function ReporterForm() {
                     );
                   }
                 }}
-                style={{ background: location ? '#10b981' : '#f59e0b', color: 'white', padding: '8px 12px', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}
+                style={{ width: '100%', height: '100%', flexDirection: 'column', gap: '8px' }}
               >
-                {location ? `Location Captured (${location.lat.toFixed(4)}, ${location.lon.toFixed(4)})` : "Attach My Current GPS Location"}
+                <MapPin size={24} />
+                <span style={{ fontSize: '14px' }}>
+                  {location ? "GPS Attached" : "Add Location"}
+                </span>
               </button>
             </div>
-
-            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>What did you observe?</label>
-            <textarea 
-              required
-              value={rawText}
-              onChange={(e) => setRawText(e.target.value)}
-              placeholder="E.g., Armed men stockpiling rice and fuel..."
-              rows={4}
-              style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #d1d5db', boxSizing: 'border-box' }}
-            />
-          </div>
-
-          <div style={{ border: '2px dashed #d1d5db', padding: '15px', borderRadius: '4px', textAlign: 'center', backgroundColor: '#f9fafb' }}>
-            <label style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-              {mediaFile ? <CheckCircle color="#10b981" size={24} /> : <Paperclip color="#6b7280" size={24} />}
-              <span style={{ color: mediaFile ? '#10b981' : '#4b5563', fontWeight: 'bold' }}>
-                {mediaFile ? mediaFile.name : "Attach Image or Video Evidence (Optional)"}
-              </span>
-              <input 
-                type="file" 
-                accept="image/*,video/*"
-                onChange={(e) => setMediaFile(e.target.files ? e.target.files[0] : null)}
-                style={{ display: 'none' }}
-              />
-            </label>
           </div>
 
           <button 
             type="submit" 
             disabled={status === 'submitting'}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', background: '#3b82f6', color: 'white', padding: '12px', border: 'none', borderRadius: '4px', cursor: status === 'submitting' ? 'not-allowed' : 'pointer', fontSize: '16px', fontWeight: 'bold' }}
+            className="cit-btn cit-btn-primary"
+            style={{ marginTop: '10px', height: '54px' }}
           >
             {status === 'submitting' ? 'Encrypting & Sending...' : <><Send size={20} /> Send Secure Tip</>}
           </button>

@@ -1,111 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Global Design Tokens */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* =========================================
+     THEME: CITIZEN PORTAL (Clean, Secure App)
+     ========================================= */
+  --cit-bg: #f8fafc;
+  --cit-surface: #ffffff;
+  --cit-text-main: #1e293b;
+  --cit-text-muted: #64748b;
+  --cit-border: #e2e8f0;
+  
+  --cit-primary: #2563eb;
+  --cit-primary-hover: #1d4ed8;
+  --cit-success: #10b981;
+  --cit-danger: #ef4444;
+  
+  --cit-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --cit-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  /* =========================================
+     THEME: COMMAND CENTER (Tactical Radar)
+     ========================================= */
+  --cmd-bg: #0f172a;
+  --cmd-surface: rgba(30, 41, 59, 0.6);
+  --cmd-text-main: #f8fafc;
+  --cmd-text-muted: #94a3b8;
+  --cmd-border: #334155;
+  
+  --cmd-accent-blue: #3b82f6;
+  --cmd-accent-green: #10b981;
+  --cmd-accent-red: #ef4444;
+  
+  --cmd-glass-bg: rgba(15, 23, 42, 0.4);
+  --cmd-glass-border: rgba(51, 65, 85, 0.5);
+  --cmd-glass-blur: blur(12px);
+  --cmd-shadow-glow: 0 0 15px rgba(59, 130, 246, 0.15);
 }
 
 body {
   margin: 0;
+  font-family: var(--font-sans);
+  background: var(--cit-bg);
+  color: var(--cit-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Base resets */
+* {
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
+
 p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+a {
+  text-decoration: none;
 }
 
-code {
+button {
+  font-family: inherit;
+}
+
+/* Citizen Components */
+.cit-card {
+  background: var(--cit-surface);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 40px;
+  width: 100%;
+  max-width: 650px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cit-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.cit-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--cit-border);
+  background: #f8fafc;
+  color: var(--cit-text-main);
+  font-family: inherit;
   font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.cit-input:focus {
+  outline: none;
+  border-color: var(--cit-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: #fff;
+}
+
+.cit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+.cit-btn-primary {
+  background: var(--cit-primary);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+.cit-btn-primary:hover:not(:disabled) {
+  background: var(--cit-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.3);
+}
+.cit-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+.cit-btn-primary:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.cit-btn-success {
+  background: var(--cit-success);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+}
+.cit-btn-success:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.cit-btn-warning {
+  background: #f59e0b;
+  color: white;
+}
+.cit-btn-warning:hover {
+  background: #d97706;
+}
+
+.cit-file-drop {
+  border: 2px dashed var(--cit-border);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cit-file-drop:hover {
+  border-color: var(--cit-primary);
+  background: rgba(37, 99, 235, 0.02);
 }

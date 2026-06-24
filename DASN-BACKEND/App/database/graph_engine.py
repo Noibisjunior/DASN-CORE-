@@ -102,3 +102,60 @@ class DASNGraphDB:
                 links.append({"source": s_id, "target": t_id, "name": record["rel_type"]})
 
             return {"nodes": list(nodes_dict.values()), "links": links}
+
+    def discover_threat_patterns(self):
+        """Runs AI-like advanced Cypher queries to discover complex insights."""
+        insights = []
+        with self.driver.session() as session:
+            # 1. Syndicate Detection
+            syndicate_query = """
+            MATCH (a1:Actor)-[:OPERATES_NEAR]->(l:Location)<-[:OPERATES_NEAR]-(a2:Actor)
+            WHERE id(a1) < id(a2)
+            RETURN a1.name AS actor1, a2.name AS actor2, l.name AS location
+            """
+            try:
+                for record in session.run(syndicate_query):
+                    insights.append({
+                        "type": "SYNDICATE_DETECTED",
+                        "severity": "CRITICAL",
+                        "message": f"Syndicate detected: {record['actor1']} and {record['actor2']} are both operating near {record['location']}."
+                    })
+            except Exception as e:
+                print(f"Syndicate query error: {e}")
+
+            # 2. Resource Hoarding
+            hoarding_query = """
+            MATCH (a:Actor)-[:PROCURED]->(res:Logistics)
+            WITH a, collect(DISTINCT res.name) as resources, count(DISTINCT res) as count
+            WHERE count >= 2
+            RETURN a.name AS actor, resources
+            """
+            try:
+                for record in session.run(hoarding_query):
+                    res_list = ", ".join(record['resources'])
+                    insights.append({
+                        "type": "RESOURCE_HOARDING",
+                        "severity": "HIGH",
+                        "message": f"Hoarding detected: {record['actor']} has procured multiple distinct resources ({res_list})."
+                    })
+            except Exception as e:
+                print(f"Hoarding query error: {e}")
+
+            # 3. High-Risk Hotspots
+            hotspot_query = """
+            MATCH (r:Report)-[:OCCURRED_AT]->(l:Location)
+            WITH l, count(DISTINCT r) as report_count
+            WHERE report_count >= 2
+            RETURN l.name AS location, report_count
+            """
+            try:
+                for record in session.run(hotspot_query):
+                    insights.append({
+                        "type": "HOTSPOT_IDENTIFIED",
+                        "severity": "ELEVATED",
+                        "message": f"Hotspot identified: {record['location']} is the subject of {record['report_count']} distinct intelligence reports."
+                    })
+            except Exception as e:
+                print(f"Hotspot query error: {e}")
+
+        return insights

@@ -19,3 +19,6 @@ Thumbs.db
 
 # Editor
 .vscode/
+
+# Data
+Data/uploads/

@@ -123,8 +123,9 @@ class DASNBlockchain:
                 
                 # Send raw signed transaction payload to Alchemy
                 tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
-                receipt = self.w3.eth.wait_for_transaction_receipt(tx_hash)
-                tx_receipt = receipt.transactionHash.hex()
+                # OPTIMIZATION: Do not wait for the receipt (which blocks for 15-30s)!
+                # Just return the pending transaction hash instantly.
+                tx_receipt = tx_hash.hex()
                 
             except Exception as e:
                 print(f"Ethereum Revert/Error: {e}")
@@ -164,9 +165,16 @@ class DASNBlockchain:
                 
                 signed_tx = self.w3.eth.account.sign_transaction(built_tx, private_key=self.private_key)
                 tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
-                self.w3.eth.wait_for_transaction_receipt(tx_hash)
+                # OPTIMIZATION: Do not wait for the receipt to speed up verification.
+                # The score will be eventually consistent on the blockchain.
                  
                 new_score = self.contract.functions.getReputationScore(anonymous_id).call()
+                # If we want immediate UI feedback, we could manually adjust the cached score here.
+                if is_valid:
+                    new_score += 1
+                else:
+                    new_score -= 1
+                    
                 self.reputation_cache[anonymous_id] = new_score
                 self.save_state()
             except Exception as e:
