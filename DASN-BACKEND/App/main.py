@@ -95,6 +95,7 @@ os.makedirs("Data/uploads", exist_ok=True)
 
 @app.post("/api/v1/report/submit")
 async def receive_report(
+    request: Request,
     phone_number: str = Form(...),
     raw_text: str = Form(...),
     interface_type: str = Form(...),
@@ -113,8 +114,10 @@ async def receive_report(
             file_location = f"Data/uploads/{file_name}"
             with open(file_location, "wb+") as file_object:
                 shutil.copyfileobj(media_file.file, file_object)
-            # This URL allows React to display the image!
-            media_url = f"https://dasn-core.onrender.com/uploads/{file_name}"
+            
+            # Dynamically build media_url from the request base URL (works both locally & on cloud)
+            base_url = str(request.base_url).rstrip("/")
+            media_url = f"{base_url}/uploads/{file_name}"
 
         structured_data = extract_intelligence(raw_text)
         

@@ -62,7 +62,7 @@
                 "latitude": 9.544905793171068,
                 "longitude": 6.472289428996217,
                 "eth_tx_hash": "442e596980a2ba6b96b7fc481bf316fb8de12d01fa7312b13f7c2a4d6aa0668c",
-                "historical_score": 4,
+                "historical_score": -6,
                 "status": "DECOY"
             }
         },
@@ -77,7 +77,7 @@
                 "latitude": 9.545013295074666,
                 "longitude": 6.472305940193897,
                 "eth_tx_hash": "a0ad738a42b78d51a39169babc438619b0dfdf2b7c1dbf7e51fa1721a2535c35",
-                "historical_score": 4,
+                "historical_score": -6,
                 "status": "VERIFIED"
             }
         },
@@ -92,7 +92,7 @@
                 "latitude": 9.544888396330276,
                 "longitude": 6.472395891376147,
                 "eth_tx_hash": "Ethereum Offline",
-                "historical_score": 4,
+                "historical_score": -6,
                 "status": "VERIFIED"
             }
         },
@@ -107,7 +107,7 @@
                 "latitude": 9.544888396330276,
                 "longitude": 6.472395891376147,
                 "eth_tx_hash": "b4b8f6f15d19d396876e7a6be2151583a0019cad707b4a30103e1e08e99f439e",
-                "historical_score": 4,
+                "historical_score": -6,
                 "status": "DECOY"
             }
         },
@@ -122,7 +122,7 @@
                 "latitude": 9.544891684549356,
                 "longitude": 6.472356372961373,
                 "eth_tx_hash": "Ethereum Offline",
-                "historical_score": 4,
+                "historical_score": -6,
                 "status": "DECOY"
             }
         },
@@ -137,7 +137,52 @@
                 "latitude": 9.54518120478421,
                 "longitude": 6.472426113884241,
                 "eth_tx_hash": "Ethereum Offline",
-                "historical_score": 4,
+                "historical_score": -6,
+                "status": "DECOY"
+            }
+        },
+        {
+            "index": 11,
+            "payload": {
+                "anonymous_id": "8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4",
+                "threat_level": "CRITICAL_THREAT",
+                "timestamp": "2026-08-15T13:29:45.750751",
+                "raw_text": "Armed group buying bulk fuel near Banadir. Looks dangerous",
+                "media_url": "https://dasn-core.onrender.com/uploads/8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4_unknown-gunmen.webp",
+                "latitude": 9.545075866666666,
+                "longitude": 6.4724963,
+                "eth_tx_hash": "Ethereum Offline",
+                "historical_score": -6,
+                "status": "VERIFIED"
+            }
+        },
+        {
+            "index": 12,
+            "payload": {
+                "anonymous_id": "8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4",
+                "threat_level": "CIVILIAN_NOISE",
+                "timestamp": "2026-08-15T13:34:38.102818",
+                "raw_text": "Testing and Auditing every feature of the DASN framework",
+                "media_url": "https://dasn-core.onrender.com/uploads/8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4_methodology2.png",
+                "latitude": 9.545075866666666,
+                "longitude": 6.4724963,
+                "eth_tx_hash": "0eb3e8ff9d0b68b238612da624f1d55811acfc572335bafe26c6447fff66f8cf",
+                "historical_score": -6,
+                "status": "DECOY"
+            }
+        },
+        {
+            "index": 13,
+            "payload": {
+                "anonymous_id": "8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4",
+                "threat_level": "CIVILIAN_NOISE",
+                "timestamp": "2026-08-15T13:38:59.166512",
+                "raw_text": "Testing and Auditing every feature of the DASN framework",
+                "media_url": "",
+                "latitude": 9.545075866666666,
+                "longitude": 6.4724963,
+                "eth_tx_hash": "c6c021f7eb32af08e0c45354c045935dd3a8774891177f2b23ce9848bc912748",
+                "historical_score": -6,
                 "status": "DECOY"
             }
         }
@@ -145,6 +190,6 @@
     "reputation_cache": {
         "0825ff1c12dedfe2716fde6f602f2b507d5f8a83187174c0e068a342e525ec96": 30,
         "f5722e0e4f556e3372c8bc4b3483991ef898a5ebf241665da20a418f74597c5e": 20,
-        "8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4": 4
+        "8ba1688826db3effe6a461848382fdb41fe414fd9a628f73bf00e16acfc9d2a4": -6
     }
 }

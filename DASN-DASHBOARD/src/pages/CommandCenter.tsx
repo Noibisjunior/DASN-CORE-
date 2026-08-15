@@ -56,6 +56,15 @@ export default function CommandCenter() {
     }
   };
 
+  const resolveMediaUrl = (url?: string) => {
+    if (!url) return '';
+    if (!import.meta.env.PROD && url.includes('/uploads/')) {
+      const filename = url.split('/uploads/')[1];
+      return `http://localhost:8000/uploads/${filename}`;
+    }
+    return url;
+  };
+
   const executeSmartContract = async (anonymousId: string | undefined, isValid: boolean) => {
     if (!anonymousId) return;
     try {
@@ -248,7 +257,14 @@ export default function CommandCenter() {
 
                       {block.payload.media_url && (
                         <div style={{ marginTop: '15px', marginBottom: '15px' }}>
-                          <img src={block.payload.media_url} alt="Evidence" style={{ width: '100%', maxHeight: '250px', objectFit: 'cover', borderRadius: '6px', border: '1px solid #475569' }} />
+                          <img 
+                            src={resolveMediaUrl(block.payload.media_url)} 
+                            alt="Evidence" 
+                            style={{ width: '100%', maxHeight: '250px', objectFit: 'cover', borderRadius: '6px', border: '1px solid #475569' }} 
+                            onError={(e) => {
+                              (e.currentTarget as HTMLElement).style.display = 'none';
+                            }}
+                          />
                         </div>
                       )}
 
