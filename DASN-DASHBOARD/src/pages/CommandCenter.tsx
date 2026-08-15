@@ -122,6 +122,9 @@ export default function CommandCenter() {
               icon: '/vite.svg' 
             });
           }
+        } else if (data.event === "REPORT_VALIDATED") {
+          // Instantly refresh ledger data to sync reputation score across all clients
+          fetchLedger();
         }
       } catch (err) {
         console.error("WS Parse Error:", err);

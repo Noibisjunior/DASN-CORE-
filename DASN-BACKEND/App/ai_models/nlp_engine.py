@@ -6,19 +6,20 @@ nlp = spacy.load("en_core_web_sm")
 
 matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
 
-# 1. Logistical Patterns
+# 1. Logistical & Tactical Patterns
 logistical_resources = [
     "fuel", "rice", "bread", "weapons", "ammunition", 
-    "motorcycles", "trucks", "medical kits", "solar panels", "starlink"
+    "motorcycles", "trucks", "medical kits", "solar panels", "starlink",
+    "rpg", "drones", "checkpoint", "ied", "explosives", "rifles", "walkie talkie"
 ]
 patterns_res = [nlp.make_doc(text) for text in logistical_resources]
 matcher.add("LOGISTICS_RESOURCE", patterns_res)
 
-# 2. NEW: Local Gazetteer (Northern Nigerian Locations)
-# This forces the AI to recognize these as locations, overriding Western bias.
+# 2. Local Gazetteer (Northern Nigerian Hotspots & Conflict Zones)
 local_locations = [
     "birnin gwari", "zamfara", "kaduna", "katsina", "sokoto", 
-    "maradun", "anka", "shinkafi", "forest"
+    "maradun", "anka", "shinkafi", "forest", "maiduguri", "borno",
+    "sambisa", "chibok", "bama", "damaturu", "yobe", "lake chad"
 ]
 patterns_loc = [nlp.make_doc(text) for text in local_locations]
 matcher.add("LOCAL_LOCATION", patterns_loc)

@@ -246,7 +246,7 @@ class ValidationAction(BaseModel):
 @app.post("/api/v1/ledger/validate")
 async def validate_intelligence(action: ValidationAction):
     try:
-        # Trigger Ethereum and get the new accumulated score (e.g., 20)
+        # Trigger Ethereum and get the new accumulated score (+10 for valid, -10 for decoy)
         new_score = dasn_ledger.execute_reputation_contract(action.anonymous_id, action.is_valid)
         
         # AGGRESSIVE CACHE UPDATE: 
@@ -262,6 +262,15 @@ async def validate_intelligence(action: ValidationAction):
                     
         # CRITICAL FIX: Save the new VERIFIED/DECOY statuses to the hard drive!
         dasn_ledger.save_state()
+        
+        # Broadcast real-time update via WebSockets
+        import asyncio
+        asyncio.create_task(ws_manager.broadcast({
+            "event": "REPORT_VALIDATED",
+            "anonymous_id": action.anonymous_id,
+            "new_score": new_score,
+            "is_valid": action.is_valid
+        }))
         
         return {"status": "success", "new_score": new_score}
     except Exception as e:

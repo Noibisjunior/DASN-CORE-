@@ -98,12 +98,20 @@ class DASNBlockchain:
 
     def anchor_intelligence(self, anonymous_id: str, threat_level: str, timestamp: str, raw_text: str = "", media_url: str = "", latitude: float = None, longitude: float = None):
         tx_receipt = "Ethereum Offline"
-        historical_score = 0 
+        
+        # Fetch score from off-chain reputation cache first, fallback to on-chain call if available
+        historical_score = self.reputation_cache.get(anonymous_id, 0)
         
         if self.w3.is_connected() and self.private_key:
             try:
-                # Read-only call works perfectly without gas or keys
-                historical_score = self.contract.functions.getReputationScore(anonymous_id).call()
+                if historical_score == 0:
+                    try:
+                        on_chain_score = self.contract.functions.getReputationScore(anonymous_id).call()
+                        if on_chain_score != 0:
+                            historical_score = on_chain_score
+                            self.reputation_cache[anonymous_id] = historical_score
+                    except Exception:
+                        pass
                 
                 # Build transaction dictionary for public cloud execution
                 nonce = self.w3.eth.get_transaction_count(self.admin_wallet)
@@ -148,7 +156,18 @@ class DASNBlockchain:
         return payload
     
     def execute_reputation_contract(self, anonymous_id: str, is_valid: bool):
-        new_score = 0
+        # 1. Fetch current reputation score from local persistent cache (default to 0)
+        current_score = self.reputation_cache.get(anonymous_id, 0)
+        
+        # 2. Apply design rule: +10 for Valid intel, -10 for Decoy/Noise
+        delta = 10 if is_valid else -10
+        new_score = current_score + delta
+        
+        # 3. Update off-chain persistent cache immediately
+        self.reputation_cache[anonymous_id] = new_score
+        self.save_state()
+        
+        # 4. Asynchronously attempt on-chain smart contract execution
         if self.w3.is_connected() and self.private_key:
             try:
                 nonce = self.w3.eth.get_transaction_count(self.admin_wallet)
@@ -164,21 +183,9 @@ class DASNBlockchain:
                 })
                 
                 signed_tx = self.w3.eth.account.sign_transaction(built_tx, private_key=self.private_key)
-                tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
-                # OPTIMIZATION: Do not wait for the receipt to speed up verification.
-                # The score will be eventually consistent on the blockchain.
-                 
-                new_score = self.contract.functions.getReputationScore(anonymous_id).call()
-                # If we want immediate UI feedback, we could manually adjust the cached score here.
-                if is_valid:
-                    new_score += 1
-                else:
-                    new_score -= 1
-                    
-                self.reputation_cache[anonymous_id] = new_score
-                self.save_state()
+                self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
             except Exception as e:
-                print(f"Smart Contract Error: {e}")
+                print(f"Smart Contract Reputation Error: {e}")
                 
         return new_score
     

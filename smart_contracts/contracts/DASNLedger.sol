@@ -46,7 +46,7 @@ contract DASNLedger {
         if (_isValid) {
             reputationScores[_anonymousId] += 10; // Valid Intel
         } else {
-            reputationScores[_anonymousId] -= 5;  // Decoy/Noise
+            reputationScores[_anonymousId] -= 10; // Decoy/Noise
         }
 
         emit ReputationUpdated(_anonymousId, reputationScores[_anonymousId]);
